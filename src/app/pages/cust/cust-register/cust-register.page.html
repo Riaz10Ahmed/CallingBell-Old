@@ -1,0 +1,109 @@
+<ion-content class="login auth-page ion-padding" color="darkblue">
+
+  <div class="auth-content">
+    <!-- Logo -->
+    <div class="text-center">
+      <div>
+        <img src="assets/img/newlogov6.png"/>
+      </div>
+    </div>
+
+     <br>
+      <div class="text-center">   
+        <ion-text color="gold" class="fw600 text10">
+          REGISTRATION
+        </ion-text>
+      </div>
+
+    <!-- Register form -->
+    <form [formGroup]="onRegisterForm" class="list-form">
+      <ion-item  class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+          First Name
+        </ion-label>
+        <ion-input color="gold" type="text" class="fw500" formControlName="first_name" maxlength="60"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('first_name').touched && onRegisterForm.get('first_name').hasError('required')">
+        <ion-text color="success">
+          This field is required
+        </ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('first_name').touched && onRegisterForm.get('first_name').hasError('pattern')">
+        <ion-text color="success">
+          Enter a valid Name more than 3 characters
+        </ion-text>
+      </p>
+
+      <ion-item  class="animated fadeInUp ion-no-padding">
+          <ion-label position="floating">
+            <ion-icon name="person" item-start></ion-icon>
+            Last Name
+          </ion-label>
+          <ion-input color="gold" type="text" class="fw500" formControlName="last_name" maxlength="60"></ion-input>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onRegisterForm.get('last_name').touched && onRegisterForm.get('last_name').hasError('required')">
+          <ion-text color="success">
+            This field is required
+          </ion-text>
+        </p>
+        <p ion-text class="text08" *ngIf="onRegisterForm.get('last_name').touched && onRegisterForm.get('last_name').hasError('pattern')">
+          <ion-text color="success">
+            Enter a valid Name more than 2 characters
+          </ion-text>
+        </p>
+
+
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="call" mode="ios" item-start></ion-icon>
+          Mobile Number
+        </ion-label>
+        <ion-input color="gold" type="number" class="fw500" formControlName="phone" maxlength="10"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('phone').touched && onRegisterForm.get('phone').hasError('required')">
+        <ion-text color="success">
+          Required Field
+        </ion-text>
+      </p>
+      
+
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="mail" mode="ios" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input color="gold" type="email" class="fw500" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('required')">
+        <ion-text color="success">
+          This field is required
+        </ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('pattern')">
+        <ion-text color="success">
+          Enter a valid email id
+        </ion-text>
+      </p>
+    </form>
+
+    <div class="ion-margin-top">
+      <ion-button icon-left size="medium" expand="full" shape="round" color="gold" (click)="signUp()" [disabled]="!onRegisterForm.valid"
+        tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Sign Up
+      </ion-button>
+
+    </div>
+
+    <!-- Other links -->
+    <div class="ion-text-center ion-margin-top">
+      <span (click)="goToLogin()" tappable>
+        <ion-text color="gold">
+          <strong>I have an account!</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>

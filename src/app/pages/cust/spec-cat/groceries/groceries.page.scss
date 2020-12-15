@@ -1,0 +1,58 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+
+.img-bg{
+	width:100%;
+	height: auto;
+}
+
+.img-item{
+	width: 50px;
+	height: 50px;
+}
+
+.div-size{
+	text-align: center;
+	flex: none;
+	width: 95px;
+	// overflow-x: auto;
+	// overflow-y: hidden;
+}
+
+.div-item{
+	display: flex;
+	flex-direction: row;
+	overflow-x: scroll;
+	// overflow: hidden;
+	// white-space: nowrap;
+}
+
+h3{
+	text-transform: uppercase;
+	font-size: 11px;
+	margin: 5% 0;
+}
+
+h1{
+	text-transform: uppercase;
+	font-weight: 600;
+	color: #0e0e27;
+	margin: 4% 0%;
+	font-size: 18px;
+}
+
+.bg-header{
+	background: url(src/assets/img/bg/grocery-bg.jpg) no-repeat center center / cover;
+}
+
+.header-item{
+	padding: 10% 0 0 10%;
+	margin: 0;
+	font-weight: 800;
+}
+
+.header-btn{
+	margin: 5% 0 5% 10%;
+}

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+     <div class="logo-in"></div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-slides [options]="slideOptsOne">
+     <ion-slide *ngFor="let s of sliderOne.slidesItems">
+      <img src="assets/img/{{s.id}}.jpg">
+     </ion-slide>
+ 	</ion-slides>
+	<h5>Explore the section of Ebikes & Cycles</h5>
+	<ion-card (click)="ebike()">
+		<div class="flex">
+			<img src="https://cdn.shopify.com/s/files/1/0912/7284/collections/3_1440x.jpg?v=1544546691" class="imgbike"/>
+			<p>Electric cycles are the finest development in our ever congesting world to provide an easy solution for daily commute woes. They not only save a lot of fuel and keep the environment clean but also help you develop good health with little pedal exercise during your commute.</p>
+		</div>
+		<h3 >E - bikes</h3>
+	</ion-card>
+	<ion-card>
+		<div class="flex">
+			<img src="https://5.imimg.com/data5/PK/IW/MY-63473212/hero-cycles-devil-ranger-500x500.jpg" class="imgbike"/>
+			<p>As per a study, people scored more in test conducted for memory, reasoning and planning after 30 minutes of pedaling on stationary bike. It was also observed that these people were able to finish the test faster as compared to people who use public transport. If free stationary cycling has such impact, imagine the brain booster you will get while riding cycles on road in free air. </p>
+		</div>
+		<h3>Cycles</h3>
+	</ion-card>
+</ion-content>

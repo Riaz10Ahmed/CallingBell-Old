@@ -1,0 +1,33 @@
+// :host {
+//     ion-content {
+//         --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary));
+//         background-color: ivory;
+//         --background:white;
+//     }
+// }
+
+.paz {
+    position: relative;
+    z-index: 10;
+}
+
+.pb{
+	font-weight: 600;
+	color:#7b7b7b;
+	margin-top: 5%;
+}
+
+.tagline{
+    text-transform: uppercase;
+    color:#ffad00;
+    margin:0;
+}
+
+h1{
+    text-transform: uppercase;
+    margin:0;
+}
+
+.footer-img{
+    border-radius: 10px;
+}

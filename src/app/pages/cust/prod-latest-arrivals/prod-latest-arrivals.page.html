@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+        <div class="logo-in"></div>
+         <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+<!-- <ion-card *ngIf="prodlist"> -->
+  <h4>LATEST ARRIVALS UNDER "{{subcat}}"</h4>
+<!-- </ion-card> -->
+
+<div *ngFor = "let prod of prodlist" class="size" (click)="getProductDesc(prod)">
+ <h5>{{prod.brand}}</h5>
+    <img src="{{prod.image}}" onError="this.src='https://static.thenounproject.com/png/212328-200.png'">
+       <h3>{{prod.productName}}</h3> 
+       <h5>{{prod.capacity}}</h5>
+        <h2><span>&#8377;</span> {{prod.price}} </h2>
+          <!-- <ion-segment color="danger" scrollable >
+            <ion-segment-button  (click)="addToCart(prod)"  checked><ion-label color="danger">Cart</ion-label></ion-segment-button>
+            <ion-segment-button  (click)="getProductDesc(prod)" checked><ion-label color="warning">Full Desc</ion-label></ion-segment-button>
+          </ion-segment>    -->    
+          <br>   
+</div>
+
+<!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="danger" size="small" (click)="opencart()"><ion-icon name="cart"></ion-icon></ion-fab-button>
+</ion-fab> -->
+</ion-content>

@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-toolbar color="darkblue">
+        <ion-buttons slot="start">
+           <ion-menu-button color="light"></ion-menu-button>
+        </ion-buttons>
+    
+        <div>
+            <img src="assets/img/newlogov7.png" class="header-logo"/>
+          </div>
+       
+        <ion-buttons slot="end">
+          <ion-button shape="round" (click)="back()">
+            <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+</ion-header>
+
+<ion-content color="grey">
+    
+  <form [formGroup]="onFilterForm">
+      <h5 class="brand-header">Filter by</h5>
+      <div>
+          <h5 class="qty-header fw600">Brand</h5>
+          <ion-list class="brand-main">
+              <ion-item *ngFor="let brand of groceryBrand" >
+                <ion-label class="cap">{{brand.name}}</ion-label>
+                <ion-checkbox slot="end" color="darkblue" mode="ios" class="nopadding" formControlName="brand" (ionChange)="selectBrand(brand.name)"></ion-checkbox>
+              </ion-item>
+            </ion-list>
+        </div>
+
+      <!-- <div>
+        <h5 class="qty-header fw600">Quantity</h5>
+        <ion-list class="brand-main">
+            <ion-item *ngFor="let qty of groceryQty">
+              <ion-label class="cap">{{qty}}</ion-label>
+              <ion-checkbox slot="end" mode="ios" color="darkblue" class="nopadding" formControlName="quantity" (ionChange)="selectQty(qty)"></ion-checkbox>
+            </ion-item>
+          </ion-list>
+      </div>     -->
+    
+        <div class="filter-button">
+            <ion-button size="small" color="gold" (click)="applyFilter()">Apply Filter</ion-button>
+        </div>
+  </form>
+
+  <div class="brand-main">
+      <h5 class="brand-header">Popular Brands</h5>
+      <div *ngFor = "let brand of groceryBrand" class="brand-size">
+        <img src="{{brand.img_path}}" class="brand-img" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'"/>
+        <h5 class="filter-brand">{{brand.name}}</h5>
+      </div>
+    </div>
+    
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+          <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+          <ion-icon name="cart"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  
+</ion-content>

@@ -1,0 +1,55 @@
+<ion-content  class="animated fadeIn login auth-page ion-padding" color="darkblue">
+  <!-- <div class="theme-bg"></div> -->
+  <div class="auth-content">
+    <!-- Logo -->
+    <div  class="animated fadeInDown ion-text-center">
+      <div>
+        <img src="assets/img/newlogov6.png"/>
+      </div>
+    </div>
+    <br>
+      <div class="text-center">   
+        <ion-text color="gold" class="fw500 text12">
+          FM ( Field Master )
+        </ion-text>
+      </div>
+    <!-- Login form -->
+    
+    <form [formGroup]="onTechLoginForm" class="list-form">
+      <ion-item  class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+         <ion-icon name="contact"></ion-icon>
+          User Name
+        </ion-label>
+        <ion-input color="gold" class="fw500" type="text" formControlName="username" ></ion-input>
+      </ion-item>
+      
+      <ion-item  class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="gold" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      
+    </form>
+
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="gold" (click)="login()" [disabled]="!onTechLoginForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        LOGIN
+      </ion-button>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="back()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+        BACK
+      </ion-button>
+    </ion-buttons>
+    </div>
+
+
+    <!-- Other links -->
+
+
+  </div>
+</ion-content>

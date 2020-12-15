@@ -1,0 +1,74 @@
+<ion-header>
+    <ion-toolbar color="darkblue">
+      <ion-buttons slot="start">
+         <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+  
+      <div>
+          <img src="assets/img/newlogov7.png" class="header-logo"/>
+        </div>
+     
+      <ion-buttons slot="end">
+        <ion-button shape="round" (click)="back()">
+          <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar mode="ios" placeholder="Search in store"></ion-searchbar>
+  <div class="cat-main">
+      <h5 class="cat-header">Results in {{categoryName}}</h5>
+      <ion-buttons class="filter-button">
+          <ion-button shape="round" (click)="groFilter()">
+             <ion-icon name="funnel" mode="ios" color="darkblue"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+  </div>
+
+  <div *ngFor="let cat of groceryCat">
+<ion-list>
+  <ion-item>
+    <div class="item-style">
+      <div class="ion-text-center item-img-style" (click)="grocerydesc(cat.id)">
+          <img src="{{cat.icon}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="cat-img"/>
+      </div>
+       <div class="item-content-style">
+          <h5 class="cat-name fw600" (click)="grocerydesc(cat.id)">{{cat.name}}</h5>
+          <h5 class="cat-quantity" (click)="grocerydesc(cat.id)">{{cat.quantity}}</h5>
+          <h5 class="cat-brand" (click)="grocerydesc(cat.id)">{{cat.brand_name}}</h5>
+          <ion-row class="cat-item-footer">
+            <ion-col class="ion-no-padding" size="7">
+              <h1 class="cat-mrp fw600" (click)="grocerydesc(cat.id)">&#8377; {{cat.mrp}}</h1>
+            </ion-col>
+            <ion-col>
+              <!-- <form [formGroup]="onQtyForm"> -->
+                <select interface="popover" [(ngModel)]="message">
+                  <option *ngFor = "let count of cat.max_count" >{{count}}</option>
+                </select>
+              <!-- </form> -->
+            </ion-col>
+            <ion-col class="ion-no-padding">
+              <ion-buttons class="ion-text-center">
+                <ion-button size="small" color="darkblue" (click)="addToCart(cat)" tappable><ion-icon name="add-circle"></ion-icon></ion-button>
+              </ion-buttons>
+            </ion-col>
+            <!-- <ion-col>
+              <ion-button size="small" color="darkblue" (click)="addToCart(cat)">Add to cart</ion-button>
+            </ion-col> -->
+          </ion-row>
+       </div>
+      </div>
+  </ion-item>
+</ion-list> 
+  </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+      <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+        <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+        <ion-icon name="cart"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+</ion-content>
+

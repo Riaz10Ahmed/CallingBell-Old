@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+         <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5 class="product-title">Results for <b>{{name}}</b></h5>
+  <div *ngFor = "let sclist of list">
+        <ion-list>
+            <ion-item>
+              <div class="item-style">
+                <div class="ion-text-center item-img-style" (click)="getProductDesc(sclist)">
+                    <img src="{{sclist.icon}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="cat-img"/>
+                </div>
+                 <div class="item-content-style">
+                    <h5 class="cat-name fw600" (click)="getProductDesc(sclist)">{{sclist.name}}</h5>
+                    <h5 class="cat-quantity" (click)="getProductDesc(sclist)">{{sclist.quantity}}</h5>
+                    <h5 class="cat-brand" (click)="getProductDesc(sclist)">{{sclist.brand_name}}</h5>
+                    <ion-row class="cat-item-footer">
+                      <ion-col class="ion-no-padding" size="9" (click)="getProductDesc(sclist)">
+                        <h1 class="cat-mrp fw600">&#8377; {{sclist.mrp}}</h1>
+                      </ion-col>
+                      <ion-col class="ion-no-padding">
+                        <ion-buttons class="ion-text-center">
+                          <ion-button size="small" color="darkblue" (click)="addToCart(sclist)" tappable><ion-icon name="add-circle"></ion-icon></ion-button>
+                        </ion-buttons>
+                      </ion-col>
+                    </ion-row>
+                 </div>
+                </div>
+            </ion-item>
+        </ion-list> 
+  </div>
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+      <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

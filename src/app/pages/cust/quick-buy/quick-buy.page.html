@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+     <div class="logo-in"></div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-searchbar animated spellcheck="true" autocorrect="on" autocomplete="on"></ion-searchbar>
+  <form [formGroup]="onOrderForm">
+ 
+  <ion-item>
+    <ion-label>Category</ion-label>
+    <ion-select (ionChange)="setSubCategoryValues(cCategory)" [(ngModel)]="cCategory" formControlName="Category">
+        <ion-select-option [value]="cCategory"  *ngFor="let cCategory of category">{{cCategory.name}}</ion-select-option>
+    </ion-select>
+</ion-item>
+
+<ion-item *ngIf="selectedSubCategory">
+    <ion-label>Sub Category</ion-label>
+     <ion-select (ionChange)="setBrandValues(sSubCategory)" [(ngModel)]="sSubCategory" formControlName="SubCategory">
+         <ion-select-option [value]="sSubCategory"  *ngFor="let sSubCategory of selectedSubCategory">{{sSubCategory.name}}</ion-select-option>
+     </ion-select>
+  </ion-item>
+
+<ion-item *ngIf="selectedBrands">
+   <ion-label>Brand</ion-label>
+   <ion-select (ionChange)="setProductValues(bBrands)" [(ngModel)]="bBrands" formControlName="Brand">
+       <ion-select-option [value]="bBrands"  *ngFor="let bBrands of selectedBrands">{{bBrands.name}}</ion-select-option>
+   </ion-select>
+</ion-item>
+
+<ion-item *ngIf="selectedProducts">
+  <ion-label>Product</ion-label>
+    <ion-select formControlName="Product">
+         <ion-select-option  *ngFor="let product of selectedProducts" >{{product.name}}</ion-select-option>
+    </ion-select>
+</ion-item>
+
+<ion-item *ngIf="selectedProducts">
+    <ion-label>Quantity</ion-label>
+      <ion-input type="number" formControlName="Quantity"></ion-input>
+  </ion-item>
+
+  </form>
+  <ion-button *ngIf="selectedProducts" size="small" (click)="item()" [disabled]="!onOrderForm.valid">+ ADD</ion-button>
+</ion-content>

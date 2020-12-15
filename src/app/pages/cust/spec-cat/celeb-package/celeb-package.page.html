@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+     <ion-buttons slot="end">
+        <ion-button shape="round" (click)="back()">
+          <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-slides [options]="slideOptsOne">
+    <ion-slide *ngFor="let s of sliderOne.slidesItems"> 
+      <img src="assets/img/ads/{{s.id}}.jpg" class="banner-img">
+    </ion-slide>
+  </ion-slides>
+  <!-- <img src="assets/img/ads/ck.jpg" class="banner-img"/> -->
+      <div *ngFor="let service of package" class="size" (click)="goToItems(service)">
+        <div class="flex">
+          <img src="{{service.image_url}}" class="img-size"/>
+          <h5 class="content-text">{{service.name}}</h5>
+        </div>
+      </div>
+      <h5 class="header-two">Snacks & Beverages</h5>
+      <div *ngFor="let service of addOn" class="size" (click)="goToItems(service)">
+        <div class="flex">
+          <img src="{{service.image_url}}" class="img-size"/>
+          <h5 class="content-text">{{service.name}}</h5>
+        </div>
+      </div>
+</ion-content>

@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <div>
+        <img src="assets/img/newlogov7.png" class="header-logo"/>
+      </div>
+         <ion-buttons slot="end">
+          <ion-button shape="round" (click)="back()">
+            <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<h4 class="ion-text-center">POOJA ITEMS</h4>
+<div *ngFor="let items of pooja"  class="size">
+  <div class="flex">
+    <img src="{{items.image_url}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="pooja-img"/>
+    <ion-row>
+      <ion-col>
+        <h5>{{items.s_name}}</h5>
+      </ion-col>
+      <ion-col>
+        <h5 class="hindi">{{items.h_name}}</h5>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <h5>{{items.t_name}}</h5>
+      </ion-col>
+      <ion-col>
+          <h5 class="hindi">{{items.e_name}}</h5>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>
+</ion-content>

@@ -1,0 +1,109 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="orderDetails">
+    <h5 class="content-header">Order details</h5>
+    <div class="div-css">
+      <ion-row>
+        <ion-col size="5">
+          <h5 class="content-one">Order Date</h5>
+          <h5 class="content-one">Order Invoice</h5>
+          <h5 class="content-one">Order Total</h5>
+          <h5 class="content-one">Status</h5>
+        </ion-col>
+        <ion-col>
+          <h5 class="content-two">{{orderDetails.order_date}}</h5>
+          <h5 class="content-two">{{orderDetails.invoice}}</h5>
+          <h5 class="content-two">{{orderDetails.total}}</h5>
+          <h5 class="content-two">{{orderDetails.status}}</h5>
+        </ion-col>
+      </ion-row>
+    </div>
+
+    <h5 class="content-header">Payment Information</h5>
+    <div class="div-css">
+      <ion-row>
+        <ion-col size="5">
+          <h5 class="content-one">Payment method</h5>
+        </ion-col>
+        <ion-col>
+          <h5 class="content-two">{{orderDetails.payment_mode}}</h5>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="purchaseDetails">
+    <h5 class="content-header">Purchase Details</h5>
+    <div *ngIf="products.length > 0">
+      <div class="div-css">
+        <h5 class="content-four">Products</h5>
+        <div class="ion-no-padding" *ngFor="let prod of products">
+          <ion-row class="row-border">
+            <ion-col class="ion-no-padding">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/71DuPbJwjcL._SL1500_.jpg" class="content-img"/>
+            </ion-col>
+            <ion-col size="9" class="ion-no-padding">
+              <h5 class="content-three">{{prod.name}}</h5>
+              <h5 class="content-one">Qty: {{prod.qty}}</h5>
+              <h5 class="content-seven">&#8377; {{prod.amount}}</h5>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div *ngIf="services.length > 0">
+      <div class="div-css">
+        <h5 class="content-four">Services</h5>
+        <div class="ion-no-padding" *ngFor="let serv of services">
+          <ion-row class="row-border">
+            <ion-col class="ion-no-padding">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/71DuPbJwjcL._SL1500_.jpg" class="content-img"/>
+            </ion-col>
+            <ion-col size="9" class="ion-no-padding">
+              <h5 class="content-three">{{serv.name}}</h5>
+              <h5 class="content-two">&#8377; {{serv.price}}</h5>
+            </ion-col>
+          </ion-row>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="orderDetails">
+    <h5 class="content-header">Order Summary</h5>
+    <div class="div-css">
+      <ion-row>
+        <ion-col>
+          <h5 class="content-one">Items:</h5>
+          <h5 class="content-one">Balance:</h5>
+          <h5 class="content-one">Tax:</h5>
+          <!-- <h5 class="content-one">Total:</h5> -->
+          <h5 class="content-five">Order Total:</h5>
+        </ion-col>
+        <ion-col size="4">
+          <h5 class="content-two">{{orderDetails.amount}}</h5>
+          <h5 class="content-two">{{orderDetails.balance}}</h5>
+          <h5 class="content-two">{{orderDetails.tax}}</h5>
+          <!-- <h5 class="content-two">{{orderDetails.total}}</h5> -->
+          <h5 class="content-six">{{orderDetails.total}}</h5>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div *ngIf="!orderDetails">
+    <h5 class="content-noservice">Oops! You don't have any orders to review</h5>
+  </div>
+</ion-content>

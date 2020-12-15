@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+        <img src="assets/img/newlogov7.png" class="header-logo"/>
+      </div>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<h5 class="ion-margin title">Top trending services which you can't resist</h5>
+  <div *ngFor="let service of trending" class="size">
+    <div class="flex">
+      <img src="{{service.icon}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" (click)="goToIssue(service)" class="service-img"/>
+      <div class="support">
+          <h5 class="service-name" (click)="goToIssue(service)">{{service.name}}</h5>
+          <ion-icon name="call" class="support-btn" (click)="supportcall($event,service)"></ion-icon>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!trending">
+      <div *ngFor="let i of [0,1,2,3,4,5]" class="size">
+          <div class="flex">
+            <ion-skeleton-text animated class="service-img"></ion-skeleton-text>
+            <div class="support">
+                <ion-skeleton-text class="service-name"></ion-skeleton-text>
+                <ion-skeleton-text class="service-name"></ion-skeleton-text>
+            </div>
+          </div>
+        </div>
+  </div>
+
+  <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+    <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+      <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+      <ion-icon name="cart"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

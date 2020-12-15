@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="danger">
+        <div class="logo-in"></div>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="logout()" class="fw700">
+        <ion-icon name="log-out"></ion-icon>
+      LOGOUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar> 
+</ion-header>
+
+<ion-content>
+
+	<div *ngFor="let t of ticket">
+		<ion-button class="ion-margin" expand="full" color="dark" (click)="viewTicket(t)">{{t.number}}</ion-button>
+	</div>
+
+</ion-content>

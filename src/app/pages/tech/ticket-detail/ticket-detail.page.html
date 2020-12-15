@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <div class="header-logo-div">
+		<img src="assets/img/newlogov7.png" class="header-logo"/>
+	  </div>
+     <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="logout()" class="fw600">
+        <ion-icon name="log-out"></ion-icon>
+   		LOGOUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" color="light">
+	<ion-text class="fw500 text12" color="darkblue">SERVICE DETAILS</ion-text>
+	<br>
+	<div>
+		<ion-row>
+			<ion-col><ion-text>ticket no</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">IGLT0010</ion-text></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><ion-text>service issue</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">AC NOT WORKING</ion-text></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><ion-text >customer name</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">CHIDAMBARADOSS</ion-text></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><ion-text >customer contact</ion-text></ion-col>
+			<ion-col><ion-text class="fw600"> 9842984211</ion-text></ion-col>
+		</ion-row>
+		
+		<ion-row>
+			<ion-col><ion-text >ticket status</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">TECHNICIAN ASSIGNED</ion-text></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><ion-text >service category</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">AIR CONTIONING</ion-text></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><ion-text >service description</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">Ac not working</ion-text></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><ion-text >solution</ion-text></ion-col>
+			<ion-col><ion-text class="fw600">-</ion-text></ion-col>
+		</ion-row>
+		<br>
+		<ion-button class="ion-margin" shape="round" expand="full" color="dark" >EDIT TICKET</ion-button>
+		<ion-button class="ion-margin" shape="round" expand="full" color="dark" (click)="prodEstimate()">PRODUCTS ESTIMATE</ion-button>
+	</div>
+</ion-content>

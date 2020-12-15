@@ -1,0 +1,37 @@
+.header{
+    font-size: 16px;
+    margin: 0px;
+    padding: 10px;
+    text-align: center;
+    background-color: #ffad00;
+}
+
+.image{
+    height:140px;
+    width: 100%;
+}
+
+.content1{
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0px;
+    padding: 5px 0px;
+    color: grey;
+    text-align: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-around;
+    background-color: #f1f1f1;
+}
+
+.msg{
+    text-align: center;
+    text-transform: capitalize;
+    margin: 5px;
+}
+
+.img-div{
+    text-align: center;
+}

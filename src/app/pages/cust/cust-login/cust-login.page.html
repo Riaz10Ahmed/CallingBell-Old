@@ -1,0 +1,69 @@
+<ion-content  class="animated fadeIn login auth-page ion-padding" color="darkblue">
+  <div class="auth-content">
+    <div  class="animated fadeInDown ion-text-center">
+      <!-- <div class="logo"></div> -->
+      <div>
+          <img src="assets/img/newlogov6.png"/>
+        </div>
+    </div>
+    <br>
+    <br>
+      <div class="text-center">   
+        <ion-text color="gold" class="fw600 text10">  
+          USER LOGIN
+        </ion-text>
+      </div>
+    <!-- Login form -->
+    
+    <form [formGroup]="onLoginForm" class="list-form">
+      <ion-item  class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating" class="fw600" color="light">
+          <ion-icon name="call" item-start></ion-icon>
+          Mobile Number
+        </ion-label>
+        <ion-input class="fw600" type="numeric" formControlName="phone" maxlength="15"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onLoginForm.get('phone').touched && onLoginForm.get('phone').hasError('required')">
+        <ion-text color="palegreen">
+          Required Field
+        </ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="onLoginForm.get('phone').touched && onLoginForm.get('phone').hasError('maxLength')">
+        <ion-text color="palegreen">
+          Enter 10 digit phone number
+        </ion-text>
+      </p>
+    </form>
+
+    <br>
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="gold" (click)="login()" [disabled]="!onLoginForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        GET OTP
+      </ion-button>
+    </div>
+
+
+    <!-- Other links -->
+    <div class="ion-text-center ion-margin-top">
+      <span (click)="goToRegister()" class="paz" tappable>
+        <ion-text color="light">
+          New here? <strong>Sign Up</strong>
+        </ion-text>
+      </span>
+    <span>
+    <ion-buttons slot="start">
+      <ion-button size="small" shape="round" color="light" (click)="back()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+        BACK
+      </ion-button>
+    </ion-buttons>
+    </span>
+    </div>
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button color="gold" (click)="callSupport()" size="small"><ion-icon name="ios-call"></ion-icon></ion-fab-button>
+    </ion-fab>      
+    
+
+  </div>
+</ion-content>

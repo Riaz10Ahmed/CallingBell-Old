@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+         
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+         <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<div *ngFor="let service of serviceCat"> 
+    <h4>{{service.name}}</h4>
+    <div *ngFor="let list of service.list"  class="size">
+      <div class="flex">
+        <img src="{{list.img}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="service-img"/>
+        <h5>{{list.name}}</h5>
+      </div>
+    </div>
+</div>
+
+  <!-- <h4>hiring services</h4>
+  <div *ngFor="let service of otherServices"  class="size">
+    <div class="flex">
+      <img src="{{service.img_m}}" onError="this.src='http://apiv1.iglobesystems.com/assets/img/no_img.png'" class="service-img"/>
+      <h5>{{service.name}}</h5>
+    </div>
+  </div> -->
+
+</ion-content>
+

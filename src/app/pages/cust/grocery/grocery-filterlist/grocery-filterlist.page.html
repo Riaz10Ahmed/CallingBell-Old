@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-toolbar color="darkblue">
+      <ion-buttons slot="start">
+         <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+  
+      <div>
+            <img src="assets/img/newlogov7.png" class="header-logo"/>
+          </div>
+     
+      <ion-buttons slot="end">
+        <ion-button shape="round" (click)="back()">
+          <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-searchbar mode="ios" placeholder="Search in store"></ion-searchbar>
+    <div>
+        <div class="cat-main">
+            <h5 class="cat-header">Filtered Results by {{groceryBrand}} - {{groceryQty}}</h5>
+        </div>
+        <div *ngFor="let list of filteredList">
+          <ion-list>
+            <ion-item>
+                <div class="item-style">
+                    <div class="ion-text-center item-img-style"  (click)="grocerydesc(list.id)">
+                        <img src="{{list.icon}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="cat-img"/>
+                    </div>
+                     <div class="item-content-style">
+                        <h5 class="cat-name fw600"  (click)="grocerydesc(list.id)">{{list.name}}</h5>
+                        <h5 class="cat-quantity"  (click)="grocerydesc(list.id)">{{list.quantity}}</h5>
+                        <h5 class="cat-brand"  (click)="grocerydesc(list.id)">{{list.brand_name}}</h5>
+                        <ion-row class="cat-item-footer">
+                          <ion-col class="ion-no-padding" size="7">
+                            <h1 class="cat-mrp fw600" (click)="grocerydesc(list.id)">&#8377; {{list.mrp}}</h1>
+                          </ion-col>
+                          <ion-col>
+                            <!-- <ion-select interface="popover" type="number" color="darkblue">
+                              <ion-select-option *ngFor = "let count of cat.max_count">{{count}}</ion-select-option>
+                            </ion-select> -->
+                            <!-- <form [formGroup]="onQtyForm"> -->
+                              <select interface="popover" [(ngModel)]="message">
+                                <option *ngFor = "let count of list.max_count" value="{{count}}">{{count}}</option>
+                              </select>
+                            <!-- </form> -->
+                          </ion-col>
+                          <ion-col class="ion-no-padding">
+                              <ion-buttons class="ion-text-center">
+                                <ion-button size="small" color="darkblue" (click)="addToCart(list)" tappable><ion-icon name="add-circle"></ion-icon></ion-button>
+                              </ion-buttons>
+                            </ion-col>
+                        </ion-row>
+                     </div>
+                    </div>
+            </ion-item>
+          </ion-list>
+        </div>
+      <!-- <div *ngFor="let list of filteredList" class="cat-divsize" (click)="grocerydesc(list.id)">
+          <img src="{{list.img_m}}" class="cat-img"/>
+          <h5 class="cat-name fw600">{{list.name}}</h5>
+          <h5 class="cat-quantity">{{list.quantity}}</h5>
+          <p class="cat-brand">{{list.brand_name}}</p>
+          <h1 class="cat-mrp fw600">&#8377; {{list.mrp}}</h1>
+      </div> -->
+    </div>
+    <div *ngIf="filteredList.length == 0">
+        <div class="cat-main">
+            <h5 class="cat-nf">No Products Found</h5>
+        </div>
+    </div>
+
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+          <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+          <ion-icon name="cart"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+</ion-content>

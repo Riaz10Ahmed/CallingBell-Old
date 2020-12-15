@@ -1,0 +1,62 @@
+
+<div *ngIf="this.id == 1">
+  <div>
+    <h5 class="header-msg">Data has been submitted successfully!</h5>
+   <div>
+     <h5 class="header">Upload Images!</h5>
+     <div *ngFor="let img of assetProduct">
+     <ion-row class="content-item" (click)="captureImg(img)">
+       <ion-col>
+          <h5 class="content-name">{{img.name}}</h5>
+       </ion-col>
+       <ion-col class="content-icon">
+        <ion-icon name="ios-arrow-forward" class="content-icon1"></ion-icon>
+       </ion-col>
+      </ion-row>
+   </div>
+  </div>
+</div>
+
+<div *ngIf="this.id !=1">
+  WRONG ID!
+</div>
+
+
+<!-- <ion-list no-padding no-margin>
+    <ion-list-header color="light">
+      <ion-label class="fw700">WELCOME TO SUPPORT</ion-label>
+    </ion-list-header>
+
+    <form [formGroup]="onSupportForm">
+      <ion-item no-padding class="margin">
+          <ion-label position="floating">How can we support you ?</ion-label>
+          <ion-select formControlName="issue">
+            <ion-select-option value="{{p.services}}" *ngFor="let p of support">{{p.services}}</ion-select-option>
+          </ion-select>
+      </ion-item>
+      <ion-label class="label">Specify the time to call</ion-label>
+      <ion-item *ngIf="!onSupportForm.get('callMeTodayAt').value && !onSupportForm.get('callMeOn').value && !onSupportForm.get('callMeAt').value ">
+          <ion-label>Call me now</ion-label>
+          <ion-checkbox formControlName="callMeNow" value="call now" ></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="!onSupportForm.get('callMeNow').value && !onSupportForm.get('callMeOn').value && !onSupportForm.get('callMeAt').value ">
+          <ion-label>Call me today at</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" formControlName="callMeTodayAt"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!onSupportForm.get('callMeNow').value && !onSupportForm.get('callMeTodayAt').value">
+          <ion-label>Call me on</ion-label>
+          <ion-datetime placeholder="Select Date" formControlName="callMeOn"></ion-datetime>
+      </ion-item>
+      <ion-item *ngIf="!onSupportForm.get('callMeNow').value && !onSupportForm.get('callMeTodayAt').value">
+          <ion-label>Call me at</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" formControlName="callMeAt"></ion-datetime>
+      </ion-item>
+    </form>  
+    <div class="text-center">
+    <ion-button shape="round" color="dark" (click)="sendSupport()" margin>Submit</ion-button>
+    </div>
+
+  </ion-list> -->
+
+
+<!-- 1800 258 6099 -->

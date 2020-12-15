@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+        <div class="logo-in"></div>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <!-- <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="medium" (click)="notifications()">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="dark" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="fw800 text-center ion-padding" style="color:red;font-size: 14px;margin:5px;padding:5px;" color="dark" >
+    EXPLORE OUR WIDE RANGE OF SUPPORT AND SUPPLY OF MULTI BRAND PRODUCTS.
+  </ion-card>
+ <!--    <h3>PRODUCT CATEGORIES</h3> -->
+    <div *ngFor ="let p of prodCat" class="size">
+         <h5>{{p.categoryName}}</h5>
+        <img src="{{p.image}}" (click)="productList(p)" onError="this.src='https://static.thenounproject.com/png/212328-200.png'">
+          <ion-segment color="danger" scrollable >
+            <ion-segment-button  (click)="notifications($event,p)"><ion-label>Support</ion-label></ion-segment-button>
+            <ion-segment-button  (click)="productList(p)"><ion-label >Supply</ion-label></ion-segment-button>
+          </ion-segment>   
+       
+          <br>               
+    </div>
+
+     <div class="size" *ngIf="prodCat">
+         <h5>other services</h5>
+        <img src="https://image.shutterstock.com/image-vector/friendly-carpenter-he-dressed-work-260nw-641263015.jpg" (click)="otherService()" onError="this.src='https://static.thenounproject.com/png/212328-200.png'">
+          <ion-segment color="danger" scrollable >
+            <ion-segment-button  (click)="otherService()"><ion-label>Support</ion-label></ion-segment-button>
+            <ion-segment-button  (click)="otherService()"><ion-label >Supply</ion-label></ion-segment-button>
+          </ion-segment>   
+       
+          <br>               
+    </div>
+     <!--  <div *ngIf ="!prodCat" class="msg">
+        Sorry for the inconvenience !<br> Kindly login again !
+      </div> -->
+<div *ngIf ="!prodCat">
+  <div *ngFor="let i of [0,1,2,3,4,5,6,7]" class="size custom-skeleton">
+          <ion-skeleton-text animated style="height:20px"></ion-skeleton-text>
+          <ion-skeleton-text animated style="height:150px"></ion-skeleton-text>
+          <ion-skeleton-text animated style="width: 50%;height:15px;"></ion-skeleton-text>  
+          <br>               
+    </div>
+  </div>
+    <!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="danger" size="small" (click)="opencart()"><ion-icon name="cart"></ion-icon></ion-fab-button>
+</ion-fab> -->
+</ion-content>

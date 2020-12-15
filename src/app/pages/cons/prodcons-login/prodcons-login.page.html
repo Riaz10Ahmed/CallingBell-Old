@@ -1,0 +1,95 @@
+<ion-content class="animated fadeIn login auth-page ion-padding" color="light">
+  <!-- <div class="theme-bg"></div> -->
+  <div class="auth-content">
+    <!-- Logo -->
+    <div class="animated fadeInDown ion-text-center">
+      <div class="logo"></div>
+      <!-- <h4 no-margin>
+        <ion-text color="light" class="fw700">
+          CALLING BELL
+        </ion-text>
+      </h4> -->
+    </div>
+    <br>
+      <div class="text-center">   
+        <ion-text color="danger" class="fw700 text12">
+          PRODUCT CONSULTANT LOGIN
+        </ion-text>
+      </div>
+    <!-- Login form -->
+    
+    <form [formGroup]="onProdConsLoginForm" class="list-form">
+      <ion-item class="animated fadeInUp ion-no-padding ">
+        <ion-label position="floating">
+          <ion-icon name="call" item-start></ion-icon>
+          Mobile Number
+        </ion-label>
+        <ion-input color="secondary" class="fw800" type="text" formControlName="phone" maxlength="10"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onProdConsLoginForm.get('phone').touched && onProdConsLoginForm.get('phone').hasError('required')">
+        <ion-text color="success">
+          Required Field
+        </ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="onProdConsLoginForm.get('phone').touched && onProdConsLoginForm.get('phone').hasError('maxLength')">
+        <ion-text color="success">
+          Enter 10 digit phone number
+        </ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="onProdConsLoginForm.get('phone').touched && onProdConsLoginForm.get('phone').hasError('pattern')">
+        <ion-text color="success">
+          Enter 10 digit phone number
+        </ion-text>
+      </p>
+
+      <ion-item class="animated fadeInUp ion-no-padding ">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onProdConsLoginForm.get('password').touched && onProdConsLoginForm.get('password').hasError('required')">
+        <ion-text color="success">
+          Required Field
+        </ion-text>
+        </p>
+    </form>
+
+    <!-- <p text-right tappable (click)="forgotPass()" class="paz">
+      <ion-text color="danger">
+        <strong>Forgot Password?</strong>
+      </ion-text>
+    </p>
+
+    <p text-right tappable (click)="resetPass()" class="paz">
+      <ion-text color="danger">
+        <strong>Reset Password</strong>
+      </ion-text>
+    </p> -->
+
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="login()" [disabled]="!onProdConsLoginForm.valid" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        LOGIN
+      </ion-button>
+    </div>
+     <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="primary" (click)="back()">
+        <ion-icon name="arrow-round-back"></ion-icon>
+        BACK
+      </ion-button>
+    </ion-buttons>
+
+
+    <!-- Other links -->
+    <!-- <div text-center margin-top>
+      <span (click)="goToRegister()" class="paz" tappable>
+        <ion-text color="danger">
+          New here? <strong>Sign Up</strong>
+        </ion-text>
+      </span>
+    </div> -->
+
+  </div>
+</ion-content>

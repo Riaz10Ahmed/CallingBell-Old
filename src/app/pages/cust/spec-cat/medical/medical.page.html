@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+      <ion-buttons slot="start">
+        <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+      <div>
+        <img src="assets/img/newlogov7.png" class="header-logo"/>
+      </div>
+         <ion-buttons slot="end">
+          <ion-button shape="round" (click)="back()">
+            <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="bg">
+    <h4>health is not valued <br>till sickness comes</h4>
+    </div>
+  <div *ngFor="let service of medicalservices"  class="size">
+    <div class="flex">
+      <img src="{{service.image_url}}" class="service-img"/>
+      <h5>{{service.name}}</h5>
+    </div>
+  </div>
+</ion-content>

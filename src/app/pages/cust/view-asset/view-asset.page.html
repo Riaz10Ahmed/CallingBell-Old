@@ -1,0 +1,382 @@
+<ion-header>
+<ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<div class="assets">
+      <h3 class="text10 fw800 animated fadeInDown margin" style="color:black;">MY HOME<br>
+      MY PRODUCTS</h3>
+        <div class="margin">
+          <ion-button size="small" color="gold" (click)="addAsset()"><ion-icon name="add" class="icon1"></ion-icon> ADD PRODUCTS </ion-button>
+        </div>
+      </div>
+      <ion-card>
+      	<ion-row>
+      		<ion-col size="4">
+      			<div>
+      				<img src="https://images-na.ssl-images-amazon.com/images/I/91Q3a0v8F%2BL._SL1500_.jpg" class="prod-img">
+      			</div>
+      			<div class="ion-text-left">
+               <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+               <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+               <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+      			</div>
+      		</ion-col>
+      		<ion-col >
+      			<ion-row>
+                  <ion-col>
+      				   <h1>Television</h1>
+                  </ion-col>
+                  <ion-col>
+      				   <h2>samsung</h2>
+                  </ion-col>
+               </ion-row>
+      				<h4>4k uhd led smart tv (55 Inches)</h4>
+      				<div>
+      					<h5>WARRANTY : 1 year</h5>
+      					<h5>EXPIRES ON : 09 Nov 2016</h5>
+      				</div>
+      			<div>
+                  <ion-button size="small" class="small3">SUPPORT</ion-button>
+                  <ion-button size="small" class="small2">BUY</ion-button>
+                  <ion-button size="small" class="small">SELL</ion-button>
+      				<ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+      			</div>
+      		</ion-col>
+      	</ion-row>
+      </ion-card>
+
+      <ion-card>
+      	<ion-row>
+      		<ion-col size="4">
+      			<div>
+      				<img src="https://images-na.ssl-images-amazon.com/images/I/71Evcslhh0L._SL1500_.jpg"  class="prod-img">
+      			</div>
+      			<div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                  </div>
+      		</ion-col>
+      		<ion-col >
+      			<ion-row>
+                              <ion-col>
+      				   <h1>mobile</h1>
+                              </ion-col>
+                              <ion-col>
+      				   <h2>one plus</h2>
+                              </ion-col>
+                        </ion-row>
+      				<h4>OnePlus 7</h4>
+      				<div>
+      					<h5>WARRANTY : 1 year</h5>
+      					<h5>EXPIRES ON : 09 Apr 2021</h5>
+      				</div>
+                  <div>
+                     <ion-button size="small" class="small3">SUPPORT</ion-button>
+                     <ion-button size="small" class="small2">BUY</ion-button>
+                     <ion-button size="small" class="small">SELL</ion-button>
+                     <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                  </div>
+      		</ion-col>
+      	</ion-row>
+      </ion-card>
+
+
+      <ion-card>
+      	<ion-row>
+      		<ion-col size="4">
+      			<div>
+      				<img src="https://images-na.ssl-images-amazon.com/images/I/718%2BHxaDigL._SL1500_.jpg"  class="prod-img">
+      			</div>
+      			<div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                  </div>
+      		</ion-col>
+      		<ion-col >
+      			<ion-row>
+                              <ion-col>
+                                 <h1>Airconditioner</h1>
+                              </ion-col>
+                              <ion-col>
+                                 <h2>onida</h2>
+                              </ion-col>
+                        </ion-row>
+      				<h4>onida 1.5 ton inverter split ac</h4>
+      				<div>
+                                    <h5>WARRANTY : 1 year</h5>
+                                    <h5>EXPIRES ON : 20 Nov 2019</h5>
+                              </div>
+                              <div>
+                                 <ion-button size="small" class="small3">SUPPORT</ion-button>
+                                 <ion-button size="small" class="small2">BUY</ion-button>
+                                 <ion-button size="small" class="small">SELL</ion-button>
+                                 <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                              </div>
+      		</ion-col>
+      	</ion-row>
+      </ion-card>
+      <ion-card>
+         <ion-row>
+            <ion-col size="4">
+               <div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRJmE7PKcnfAU9F6XdsVNZrymVvGxUzuL22D5RvdJ29iGuoapgQ"  class="prod-img">
+               </div>
+               <div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                  </div>
+            </ion-col>
+            <ion-col >
+               <ion-row>
+                              <ion-col>
+                                 <h1>RO PURIFIER</h1>
+                              </ion-col>
+                              <ion-col>
+                                 <h2>KENT</h2>
+                              </ion-col>
+                        </ion-row>
+                  <h4>KENT SUPER PLUS</h4>
+                  
+                  <div>
+                                    <h5>WARRANTY : 1 year</h5>
+                                    <h5>EXPIRES ON : 05 FEB 2019</h5>
+                              </div>
+                              <div>
+                                 <ion-button size="small" class="small3">SUPPORT</ion-button>
+                                 <ion-button size="small" class="small2">BUY</ion-button>
+                                 <ion-button size="small" class="small">SELL</ion-button>
+                                 <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                              </div>
+            </ion-col>
+         </ion-row>
+      </ion-card>
+       <ion-card>
+       	<ion-row>
+      		<ion-col size="4">
+      			<div>
+      				<img src="https://images-na.ssl-images-amazon.com/images/I/71RudCPH3kL._SY879_.jpg"  class="prod-img">
+      			</div>
+      			<div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                  </div>
+      		</ion-col>
+      		<ion-col >
+      			<ion-row>
+                  <ion-col>
+                     <h1>Refrigerator</h1>
+                  </ion-col>
+                 <ion-col>
+                     <h2>samsung</h2>
+                   </ion-col>
+               </ion-row>
+      				<h4>Samsung 810 L Frost Free Side-by-Side Refrigerator</h4>
+      				
+      				<div>
+                     <h5>WARRANTY : 1 year</h5>
+                     <h5>EXPIRES ON : 20 DEC 2019</h5>
+                  </div>
+                  <div>
+                     <ion-button size="small" class="small3">SUPPORT</ion-button>
+                     <ion-button size="small" class="small2">BUY</ion-button>
+                     <ion-button size="small" class="small">SELL</ion-button>
+                     <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                  </div>
+      		</ion-col>
+      	</ion-row>
+      </ion-card>
+
+      <ion-card>
+         <ion-row>
+            <ion-col size="4">
+               <div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRoKVllk-DExSg_jVyAoDOEHFNDKW_k7bdUscRAqYrcnAfL3jB3"  class="prod-img">
+               </div>
+               <div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                  </div>
+            </ion-col>
+            <ion-col >
+               <ion-row>
+                  <ion-col>
+                     <h1>Two Wheeler</h1>
+                  </ion-col>
+                  <ion-col>
+                     <h2>KTM</h2>
+                  </ion-col>
+               </ion-row>
+               <h4>KTM 125 DUKE</h4>
+                  <div>
+                     <h5>WARRANTY : 5 years</h5>
+                     <h5>EXPIRES ON : 20 DEC 2020</h5>
+                  </div>
+                  <div>
+                     <ion-button size="small" class="small3">SUPPORT</ion-button>
+                       <ion-button size="small" class="small2">BUY</ion-button>
+                     <ion-button size="small" class="small">SELL</ion-button>
+                     <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                  </div>
+            </ion-col>
+         </ion-row>
+      </ion-card>
+
+      <ion-card>
+         <ion-row>
+            <ion-col size="4">
+               <div>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTM2xcHG38u8lrZm870SBuWpeYDmUDfqgOndqpmNHIDBklnw6Qw"  class="prod-img">
+               </div>
+               <div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+               </div>
+            </ion-col>
+            <ion-col >
+               <ion-row>
+                  <ion-col>
+                     <h1>FOUR Wheeler</h1>
+                  </ion-col>
+                  <ion-col>
+                      <h2>TOYOTA</h2>
+                  </ion-col>
+               </ion-row>
+               <h4>INNOVA</h4>
+                     <div>
+                        <h5>WARRANTY : 5 years</h5>
+                        <h5>EXPIRES ON : 02 NOV 2020</h5>
+                     </div>
+                     <div>
+                        <ion-button size="small" class="small3">SUPPORT</ion-button>
+                        <ion-button size="small" class="small2">BUY</ion-button>
+                        <ion-button size="small" class="small">SELL</ion-button>
+                        <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                     </div>
+            </ion-col>
+         </ion-row>
+      </ion-card>
+
+      <ion-card>
+         <ion-row>
+            <ion-col size="4">
+               <div>
+                  <img src="https://qph.fs.quoracdn.net/main-qimg-11ef692748351829b4629683eff21100.webp"  class="prod-img">
+               </div>
+               <div class="ion-text-left">
+                  <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                  <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+               </div>
+            </ion-col>
+            <ion-col >
+               <ion-row>
+                  <ion-col>
+                     <h1>Robert</h1>
+                  </ion-col>
+                  <ion-col>
+                      <h2>ADULT</h2>
+                  </ion-col>
+               </ion-row>
+               <!-- <h4>Dad</h4> -->
+               <div class="asset-bottom">
+                  <div>
+                     <h5>AGE : 54 years</h5>
+                     <h5>WORKING AT : SHIELD</h5>
+                     <h5>HEALTH INSURANCE : NO</h5>
+                  </div>
+                  <div>
+                     <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                  </div>
+               </div> 
+            </ion-col>
+         </ion-row>
+      </ion-card>
+      
+      <ion-card>
+            <ion-row>
+               <ion-col size="4">
+                  <div>
+                     <img src="https://pbs.twimg.com/profile_images/971105319458754561/02vbXjWU_400x400.jpg"  class="prod-img">
+                  </div>
+                  <div class="ion-text-left">
+                     <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                     <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                     <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                  </div>
+               </ion-col>
+               <ion-col >
+                  <ion-row>
+                     <ion-col>
+                        <h1>kate</h1>
+                     </ion-col>
+                     <ion-col>
+                         <h2>ADULT</h2>
+                     </ion-col>
+                  </ion-row>
+                  <!-- <h4>Mom</h4> -->
+                  <div class="asset-bottom">
+                     <div>
+                        <h5>AGE : 47 years</h5>
+                        <h5>WORKING AT : HOME MAKER</h5>
+                        <h5>HEALTH INSURANCE : YES</h5>
+                     </div>
+                     <div>
+                        <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                     </div>
+                  </div> 
+               </ion-col>
+            </ion-row>
+         </ion-card>
+
+         <ion-card>
+               <ion-row>
+                  <ion-col size="4">
+                     <div>
+                        <img src="https://superstarsbio.com/wp-content/uploads/2019/11/Lexi-Rabe-bio.jpg"  class="prod-img">
+                     </div>
+                     <div class="ion-text-left">
+                        <ion-icon name="create" color="darkblue" size="small" mode="ios"></ion-icon>
+                        <ion-icon name="trash" color="gold" size="small" mode="ios"></ion-icon>
+                        <ion-icon name="information-circle-outline" color="darkblue" size="small" mode="ios"></ion-icon>
+                     </div>
+                  </ion-col>
+                  <ion-col >
+                     <ion-row>
+                        <ion-col>
+                           <h1>lexi</h1>
+                        </ion-col>
+                        <ion-col>
+                            <h2>CHILD</h2>
+                        </ion-col>
+                     </ion-row>
+                     <!-- <h4>Mom</h4> -->
+                     <div class="asset-bottom">
+                        <div>
+                           <h5>AGE : 7 years</h5>
+                           <h5>WORKING AT : - </h5>
+                           <h5>HEALTH INSURANCE : YES</h5>
+                        </div>
+                        <div>
+                           <ion-text (click)="assetInfo()" color="darkblue">MORE INFO</ion-text>
+                        </div>
+                     </div> 
+                  </ion-col>
+               </ion-row>
+            </ion-card>
+</ion-content>

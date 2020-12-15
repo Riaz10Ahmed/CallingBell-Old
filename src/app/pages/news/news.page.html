@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+        <div class="logo-in"></div>
+ </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+	<h2 class="text12 text-center fw700" style="color:red">Handpicked Breaking News from all over India</h2>
+	<h3 class="text08 text-center">Credits: NEWSAPI</h3>
+	<div *ngFor="let news of articles">
+	  <ion-card padding>
+	  	<ion-text>{{news.source.name}}</ion-text>
+      	<h5>{{news.title}}</h5>
+      </ion-card>
+     </div>
+
+</ion-content>

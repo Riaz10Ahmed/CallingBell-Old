@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+	 <div>
+		<img src="assets/img/newlogov7.png" class="header-logo"/>
+	  </div>
+	 <ion-buttons slot="end">
+		<ion-button shape="round" (click)="back()">
+			<ion-icon name="arrow-round-back" class="text15"></ion-icon>
+		</ion-button>
+	 </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+	<ion-searchbar mode="ios" placeholder="Search in store" class="ion-no-padding"></ion-searchbar>
+	<!-- <div class="bg-header">
+		<img src="assets/img/bg/groceries-bg.png">
+		<h5 class="header-item">HASSEL FREE SELECTION</h5>
+		<ion-button size="small" class="header-btn" color="redtwo" (click)="quickbuy()">QUICK BUY</ion-button>
+	</div> -->
+
+	<div *ngFor="let cat of groceryCat">
+			<h1>{{cat.name}}</h1>
+			<!-- <img src="{{cat.icon}}"/> -->
+			<div class="div-item" >
+				<div *ngFor="let item of cat.item_list" (click)="getGrocerylt(item)" class="div-size">
+					<img src="{{item.icon}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="img-item">
+					<h3>{{item.name}}</h3>
+					<!-- <ion-icon slot="icon-only" name="arrow-dropright"></ion-icon> -->
+				</div>
+			</div>
+	</div>
+
+	<img src="assets/img/ads/organic.jpg" (click)="goToOrganics()"/>
+	
+	<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+            <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+              <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+              <ion-icon name="cart"></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
+</ion-content>
+
+

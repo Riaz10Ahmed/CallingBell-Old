@@ -1,0 +1,27 @@
+
+<ion-content class="animated fadeIn login auth-page ion-padding" color="darkblue">
+  <div class="auth-content">
+      <div  class="animated fadeInDown ion-text-center">
+        <!-- <div class="logo"></div> -->
+        <div>
+            <img src="assets/img/newlogov6.png"/>
+          </div>
+      </div>
+      <br>
+      <br>
+        <div class="ion-text-center">   
+          <ion-text color="light" class="fw400 text10" *ngIf="this.number">  
+            Enter 4 digit OTP sent to your mobile number <br>{{this.number.phone}}
+          </ion-text>
+          <br> <br>
+          <form [formGroup]="onOtpForm">
+              <ion-input class="fw600" type="text" formControlName="otp" maxlength="6" class="otp-box"></ion-input>
+          </form>
+          <br>
+          <ion-button icon-left size="medium" expand="full" shape="round" color="gold" (click)="verifyOtp()" [disabled]="!onOtpForm.valid" tappable>
+              <ion-icon name="log-in"></ion-icon>
+              VERIFY OTP
+          </ion-button>
+        </div>
+  </div>
+</ion-content>

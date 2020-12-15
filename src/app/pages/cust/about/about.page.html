@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button (click)="getLoc()" expand="block" color="gold">Get Location</ion-button>
+  <ion-list>
+    <ion-list-header>
+      <ion-label color="darkblue">Location Info</ion-label>
+    </ion-list-header>
+    <ion-item>
+      <ion-label>
+        Latitude
+      </ion-label>
+      <ion-badge slot="end" color="gold">{{lat}}</ion-badge>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        longitude
+      </ion-label>
+      <ion-badge slot="end" color="gold">{{lng}}</ion-badge>
+    </ion-item>
+    </ion-list>
+ 
+    <ion-card>
+      <ion-card-content>{{address}}</ion-card-content>
+    </ion-card>
+
+    <p>{{this.result1}}</p>
+<!-- <div>
+   <div>
+      <img src="assets/img/Splash/BELL_B.png" class="bell bell_BF">
+      <img src="assets/img/Splash/BELL_T.png" class="bell bell_T">
+      <img src="assets/img/Splash/BELL_F.png" class="bell bell_BF">
+    </div>
+  </div> -->
+</ion-content>

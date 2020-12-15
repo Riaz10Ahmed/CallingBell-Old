@@ -1,0 +1,32 @@
+<ion-list class="ion-no-padding ion-no-margin" mode="ios">
+    <ion-list-header color="darkblue">
+      <ion-label class="fw400">WELCOME TO CALLING BELL SUPPORT</ion-label>
+    </ion-list-header>
+
+    <form [formGroup]="onSupportForm">
+      <ion-item lines="none" class="notes-css">
+        <ion-input type="text" placeholder="Issue notes if any" formControlName="notes" class="ion-no-padding"></ion-input>
+      </ion-item>
+      <h5 class="request-time">When can we reach you ?</h5>
+      <!-- <ion-item *ngIf="!onSupportForm.get('callMeTodayAt').value && !onSupportForm.get('callMeOn').value && !onSupportForm.get('callMeAt').value ">
+          <ion-label>Call me now</ion-label>
+          <ion-checkbox formControlName="callMeNow" value="call now" ></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="!onSupportForm.get('callMeNow').value && !onSupportForm.get('callMeOn').value && !onSupportForm.get('callMeAt').value ">
+          <ion-label>Call me today at</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" formControlName="callMeTodayAt" placeholder="Select Time"></ion-datetime>
+      </ion-item> -->
+      <ion-item>
+          <ion-label>Date</ion-label>
+          <ion-datetime placeholder="Select Date" formControlName="reqDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+          <ion-label>Time</ion-label>
+          <ion-datetime display-format="h:mm A" picker-format="h:mm A" formControlName="reqTime" placeholder="Select Time"></ion-datetime>
+      </ion-item>
+    </form>  
+    <div class="text-center">
+    <ion-button shape="round" color="gold" (click)="sendSupport()" class="ion-margin" [disabled]="!onSupportForm.valid">Submit</ion-button>
+    </div>
+
+  </ion-list>

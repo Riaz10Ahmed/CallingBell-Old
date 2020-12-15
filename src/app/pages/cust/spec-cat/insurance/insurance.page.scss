@@ -1,0 +1,49 @@
+.header-logo{
+  width:120px;
+  vertical-align: middle;
+}
+
+.size{
+	display: inline-block;
+	width:29%;  //default - 46%
+	background-color: #fff6f6;
+	text-align: center;
+    margin: 2%;
+    height:120px;
+}
+
+  .service-img{
+    width:40px;
+    // height:150px;
+    height:40px;
+    border-radius: 5px;
+    // margin-left: auto;
+    // margin-right: auto;
+    margin: 10px auto;
+    }
+
+ .flex{
+ 	display: flex;
+ 	flex-direction:column;
+ }
+
+ h5{
+ 	text-transform: uppercase;
+ 	margin:10px;
+ 	font-size: 12px;
+ }
+
+ .bg{
+   background: url(src/assets/img/bg/6.jpg) no-repeat center center/cover;
+  //  opacity:0.5;
+ }
+
+ h4{
+   text-transform: uppercase;
+   margin: 0;
+   padding: 10%;
+   color: snow;
+   font-size: 1.5rem;
+   text-shadow: 2px 2px black;
+   text-align: end;
+ }

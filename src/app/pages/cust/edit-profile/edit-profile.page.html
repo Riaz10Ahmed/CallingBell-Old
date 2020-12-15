@@ -1,0 +1,75 @@
+<ion-header>
+<ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+     <div class="logo-in"></div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile" *ngFor="let user of user">
+  <ion-card class="ion-no-margin">
+    <ion-card-content class="bg-profile">
+      <ion-title>EDIT PROFILE</ion-title>
+      <img src="assets/img/avatar.png">
+      <h1 class="fw500">{{user.fullname}}</h1>
+      <h2 color="light" class="ion-margin-bottom">{{user.phone}}</h2>
+      <h3 color="light">{{user.email}}</h3>
+    </ion-card-content>
+  
+    <form [formGroup]="onUpdateForm" class="list-form" padding>
+
+      <ion-item  class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+          Occupation
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="occupation" placeholder="{{user.occupation}}"></ion-input>
+      </ion-item>
+
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+          Date Of Birth
+        </ion-label>
+        <ion-input color="secondary" type="date" formControlName="dob" placeholder="{{user.dob}}"></ion-input>
+      </ion-item>
+
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="person" item-start></ion-icon>
+          Street Name
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="street" placeholder="{{user.street}}"></ion-input>
+      </ion-item>
+
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="call" item-start></ion-icon>
+          City 
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="city" placeholder="{{user.city}}"></ion-input>
+      </ion-item>
+      
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          State
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="state" placeholder="{{user.state}}"></ion-input>
+      </ion-item>
+      
+
+      <ion-item class="animated fadeInUp ion-no-padding">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Zipcode
+        </ion-label>
+        <ion-input color="secondary" type="number" formControlName="zip" placeholder="{{user.zip}}"></ion-input>
+      </ion-item>
+    </form>
+    <div class="text-center">
+    <ion-button shape="round" color="dark" (click)="updateUserProfile()" class="ion-margin">Update Profile</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

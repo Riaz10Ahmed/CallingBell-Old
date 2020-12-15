@@ -1,0 +1,71 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+.header{
+	text-align: center;
+	font-size:14px;
+	font-weight: 600;
+	margin: 5px 0px;
+}
+
+.header-sub{
+	text-align: center;
+	font-size:12px;
+	margin: 5px 0px;
+}
+
+// h5{
+// 	text-align: center;
+// 	font-size: 1rem;
+// 	font-weight: 600;
+// }
+
+.ion-item{
+	border:0.5px solid black;
+	border-radius:10px;
+	margin-bottom: 10px;
+}
+
+.buttonone{
+	margin: 10px 0px;
+}
+
+.buttontwo{
+	margin:10px 20px;
+}
+
+.asset-image{
+	width: 80px;
+	height: 80px;
+}
+
+ion-content{
+	--padding-start:10px;
+	--padding-end:10px;
+}
+
+.header-h5{
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 600;
+	margin: 5px;
+	text-align: center;
+	background-color: aliceblue;
+    padding: 5px;
+}
+
+.header-h4{
+	text-transform: uppercase;
+	font-size: 14px;
+	margin: 5px;
+	text-align: center;
+}
+
+.custom-padding{
+	padding-left: 16px;
+}
+
+ion-radio{
+	margin-right: 10px;
+}

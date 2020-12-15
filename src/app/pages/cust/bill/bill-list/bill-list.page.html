@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <h5 class="content-header">YOUR ORDERS</h5>
+  <div>
+    <div *ngFor="let bill of billList" class="bill-css" (click)="billDetail(bill)">
+      <h1 class="content-two"><span class="content-invoice">invoice no.</span>{{bill.invoice}}</h1>
+      <ion-row>
+        <ion-col>
+          <h5 class="content-one margin"><span class="content-bold">Order Date : </span></h5>
+          <h5 class="content-one margin"><span class="content-bold">Status : </span></h5>
+          <h5 class="content-one margin"><span class="content-bold">Payment Date : </span></h5>
+          <h5 class="content-one margin"><span class="content-bold">Delivery Date : </span></h5>
+          <h5 class="content-one margin"><span class="content-bold">Total : </span></h5>
+        </ion-col>
+        <ion-col>
+          <h5 class="content-one margin">{{bill.order_date}}</h5>
+          <h5 class="content-one margin">{{bill.status}}</h5>
+          <h5 class="content-one margin">-</h5>
+          <h5 class="content-one margin">-</h5>
+          <h5 class="content-one margin">{{bill.total}}</h5>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  <div *ngIf="!billList">
+    <h5 class="content-noorder">Oops! You don't have any orders placed!</h5>
+  </div>
+</ion-content>

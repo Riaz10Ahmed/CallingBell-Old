@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="notifications()">
+        <i class="fa fa-bell faa-ring animated"></i>
+        <ion-badge color="darkblue" slot="end">8</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <!-- <div>
+    <ion-row>
+      <ion-col>
+        <h1 *ngIf="user">Hi ! {{user.fullname}}</h1>
+        <h2 class="text15 text-center fw800 ml3">WELCOME TO CALLING BELL</h2>
+        <h5 class="text08 text-center fw700">YOUR ONE STOP APP FOR SUPPORT AND SUPPLY</h5>
+      </ion-col>
+      <ion-col size="3">
+        <img src="assets/img/bell figures/homebell.png" class="img-size">
+      </ion-col>
+    </ion-row>
+    </div> -->
+    <div>
+      <ion-slides [options]="slideOptsOne">
+        <ion-slide *ngFor="let s of sliderOne.slidesItems"> 
+          <img src="assets/img/ads/{{s.id}}.jpg" class="header-ads">
+        </ion-slide>
+      </ion-slides>
+    </div>
+
+      <div class="assets">
+      <h3 class="text10 fw800 animated fadeInDown margin" style="color:#0e0e27;">MY HOME<br>MY ASSETS</h3>
+        <div class="margin">
+          <ion-button size="small" color="gold" (click)="viewAsset()">VIEW</ion-button> 
+          <ion-button size="small" color="gold" (click)="addAsset()">ADD</ion-button>
+        </div>
+      </div>
+
+        <div *ngFor="let icon of Icons" class="icon-size">
+          <div class="icon-flex" (click)="goToCategory(icon)">
+            <img src="{{icon.icon}}" class="icon-img"/>
+            <ion-text class="icon-text-size fw600">{{icon.name}}</ion-text>
+          </div>
+        </div>
+
+        <div *ngIf="!Icons">
+            <div *ngFor="let i of [0,1,2,3,4,5,6,7,8,9,10,11]" class="icon-size custom-skeleton">
+                <div class="icon-flex">
+                  <ion-skeleton-text animated class="icon-img"></ion-skeleton-text>
+                  <ion-skeleton-text animated class="icon-text-size fw600"></ion-skeleton-text>
+                </div>
+              </div>
+              <h5 class="error-footer">No Internet connection</h5>
+        </div>
+        
+
+  <ion-slides [options]="slideOptsTwo" >
+    <ion-slide *ngFor="let s of sliderTwo.slidesItems"> 
+      <img src="assets/img/ads/{{s.id}}.jpg"  class="header-ads">
+    </ion-slide>
+  </ion-slides>
+     
+  <!-- <div class="text-center">
+    <ion-button (click)="news()" color="danger" expand="full">Local News Headlines</ion-button>
+  </div>
+  <ion-slides [options]="slideOptsOne">
+     <ion-slide *ngFor="let s of sliderOne.slidesItems">
+      <img src="assets/img/{{s.id}}.jpg">
+      </ion-slide>
+  </ion-slides> -->
+
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="gold" size="small"><ion-icon name="arrow-dropup" mode="ios"></ion-icon></ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button color="gold" (click)="callSupport()">
+        <ion-icon name="ios-call"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button color="gold" (click)="opencart()" #cart>
+        <ion-icon name="cart"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+</ion-fab>
+
+<!-- <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="dark" (click)="opencart()" size="small"><ion-icon name="ios-cart"></ion-icon></ion-fab-button>
+</ion-fab> -->
+</ion-content>

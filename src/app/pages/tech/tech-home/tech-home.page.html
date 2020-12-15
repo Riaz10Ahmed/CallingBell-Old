@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <div class="header-logo-div">
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="logout()" class="fw600">
+        <ion-icon name="log-out"></ion-icon>
+   		LOGOUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+<ion-content class="ion-padding" color="darkblue">
+<!-- <div class="text-center"> -->
+	<ion-button class="ion-margin" shape="round" expand="full" color="gold" (click)="openTickets()">Open Tickets</ion-button>
+	<ion-button class="ion-margin" shape="round" expand="full" color="gold" >Closed Tickets</ion-button>
+<!-- </div> -->
+</ion-content>
+

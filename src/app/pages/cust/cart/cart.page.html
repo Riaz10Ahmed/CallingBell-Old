@@ -1,0 +1,120 @@
+<ion-content fullscreen>
+  <div class="cart-topheader">
+      <span class="cart-title">CALLING BELL CART</span>
+        <ion-button (click)="close()" fill="clear" color="dark">
+          <ion-icon name="close" slot="start"></ion-icon>
+        </ion-button>
+  </div>
+
+  <div *ngIf="cartProductList">
+    <h5 class="cart-header">Products</h5>
+    <ion-list class="list-style">
+      <ion-item *ngFor="let i of cartProductList">
+        <ion-grid class="ion-no-padding">
+        <ion-row>
+          <ion-col size="9" class="prod-name">
+            <b>{{ i.product_detail.name }}</b>
+          </ion-col>
+          <!-- <ion-col size="1"></ion-col> -->
+          <ion-col size="2" class="count-style" (click)="updateCart(i.product_detail)">
+            Qty : {{i.count}}
+          </ion-col>
+          <ion-col size="1" class="ion-text-end" (click)="removeProdCartItem(i)">
+            <ion-icon name="trash" color="darkblue" mode="ios"></ion-icon>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="row-flex">
+            <ion-col size="6" class="prod-qty">
+              <h5 class="margin-style">{{i.product_detail.category_name}} - {{i.product_detail.quantity}}</h5>
+            </ion-col>
+            <ion-col size="3" class="prod-qty">
+              <h5 class="margin-style">MRP : {{i.product_detail.mrp}} * {{i.count}}</h5>
+            </ion-col>
+            <ion-col size="3" class="prod-mrp">
+              <b>{{ i.count * i.product_detail.mrp | currency:'INR' }}</b>
+            </ion-col>
+        </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-row>
+          <ion-col size="6">
+            <p class="total-style">Total:</p>
+          </ion-col>
+          <ion-col size="6" class="ion-text-end">
+            <p class="total-style">{{ getProdTotal() | currency:'INR' }}</p>
+          </ion-col>
+    </ion-row>
+    </ion-list>
+
+      <!-- <div class="ion-text-end ion-padding">
+        <ion-button size="small" color="dark" (click)="checkout()">
+          Checkout
+        </ion-button>
+      </div> -->
+    </div>
+    
+    
+    <div *ngIf="cartServiceList">
+      <h5 class="cart-header">Services</h5>
+      <ion-list class="list-style">
+        <ion-item *ngFor="let i of cartServiceList">
+          <ion-grid>
+          <ion-row>
+            <ion-col size="11" class="prod-name">
+              <b>{{ i.service_detail.name }}</b>
+            </ion-col>
+            <!-- <ion-col size="1"></ion-col>
+            <ion-col size="2" class="count-style">
+              Qty : {{i.count}}
+            </ion-col> -->
+            <ion-col size="1" class="ion-text-end" (click)="removeServCartItem(i)">
+              <ion-icon name="trash" color="darkblue" mode="ios"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col size="6" class="prod-qty">
+                <!-- <h5 class="margin-style">{{i.service_detail.quantity}}</h5> -->
+              </ion-col>
+              <ion-col size="6" class="prod-mrp">
+                <b>{{ i.service_detail.mrp | currency:'INR' }}</b>
+              </ion-col>
+          </ion-row>
+          </ion-grid>
+        </ion-item>
+        <ion-row>
+            <ion-col size="6">
+              <p class="total-style">Total:</p>
+            </ion-col>
+            <ion-col size="6" class="ion-text-end">
+              <p class="total-style">{{ getServTotal() | currency:'INR' }}</p>
+            </ion-col>
+      </ion-row>
+      </ion-list>
+      </div>
+
+      <div class="ion-text-end ion-padding" *ngIf="cartProductList || cartServiceList">
+        <ion-button size="small" color="dark" (click)="checkout()">
+          Checkout
+        </ion-button>
+      </div>
+
+      <div *ngIf="!cartProductList && !cartServiceList">
+        <div class="ion-text-center">
+          <img src="https://cdn4.iconfinder.com/data/icons/expressive-emoticons/64/awkward_clumsy_oops_drop_ungainly_emoji_expression_face_emoticon_feeling_anxiety_surprise_clueless_socially_awkward_uneasy_guilty_discomfort_disappointed_afraid_anxiety-512.png"
+          class="nocart-img"/>
+        </div>
+        <h5 class="nocart-header">Oops ! You have no items in cart !</h5>
+        <div class="ion-text-center">
+          <ion-button color="gold" size="small" (click)="goToGrocery()">Buy Groceries</ion-button>
+          <ion-button color="gold" size="small" (click)="goToService()">Need Service</ion-button>
+        </div>
+      </div>
+
+</ion-content>
+
+
+
+
+
+

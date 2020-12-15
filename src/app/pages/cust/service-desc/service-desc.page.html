@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="danger">
+  	<ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+        <div class="logo-in"></div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="light">
+  <ion-card padding *ngFor="let s of status">
+    <ion-row>
+      <ion-col><h5 class="fw800">TICKET ID</h5></ion-col>
+      <ion-col><h4 class="fw800 text12">{{s.id}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h5 class="fw800">TITLE</h5></ion-col>
+      <ion-col><h4 class="fw800 text12">{{s.issue}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h5 class="fw800">CREATED TIME & DATE</h5></ion-col>
+      <ion-col><h4 class="fw800 text12">{{s.time}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h5 class="fw800">STATUS</h5></ion-col>
+      <ion-col><h4 class="fw800 text15">{{s.status}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h5 class="fw800">DESCRIPTION</h5></ion-col>
+      <ion-col><h4 class="fw800 text12">{{s.description}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col><h5 class="fw800">SOLUTION</h5></ion-col>
+      <ion-col><h4 class="fw800 text12">{{s.solution}}</h4></ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

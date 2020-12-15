@@ -1,0 +1,317 @@
+<ion-header>
+<ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+	<div>
+		<img src="assets/img/newlogov7.png" class="header-logo"/>
+	  </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="content-style">
+	
+	<ion-segment [(ngModel)]="segment" scrollable color="darkblue">
+		<ion-segment-button value="Product">
+		  Product
+		</ion-segment-button>
+		<ion-segment-button value="Members">
+		  Members
+		</ion-segment-button>
+	</ion-segment>
+
+	<div [ngSwitch]="segment">
+	<div *ngSwitchCase="'Product'">
+		<h2 class="header">ASSET MANAGEMENT</h2>
+		<p class="header-sub">You can add your household assets here!</p>
+		   <form [formGroup]="onAddAssetForm">
+			<ion-list lines="none">
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600">Product Category</ion-label>
+				<ion-select formControlName="productCategory" interface="popover" lines="none" mode="ios">
+						<ion-select-option >Water Purifier</ion-select-option>
+						<ion-select-option >Air Conditioner</ion-select-option>
+						<ion-select-option >Inverter</ion-select-option>
+						<ion-select-option >Inverter Battery</ion-select-option>
+						<ion-select-option >Television</ion-select-option>
+						<ion-select-option >Camera</ion-select-option>
+						<ion-select-option >Mobiles</ion-select-option>
+						<ion-select-option >Laptop / Desktop</ion-select-option>
+				</ion-select>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600">Product Name</ion-label>
+				<ion-input formControlName="productName" type="text"></ion-input>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600">Product No.</ion-label>
+				<ion-input formControlName="productSerialNo" type="text" placeholder="Serial Number"></ion-input>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600">Brand</ion-label>
+				<ion-input formControlName="productBrand" type="text"></ion-input>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600">Date of Purchase</ion-label>
+				<ion-datetime placeholder="Select Date" formControlName="dateOfPurchase"></ion-datetime>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600">Warranty</ion-label>
+				<ion-input type="numeric" formControlName="monthsWarranty" placeholder="In Months"></ion-input>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed" class="fw600" color="darkblue">Product Price</ion-label>
+				<ion-input type="numeric" placeholder="&#8377;" formControlName="productPrice"></ion-input>
+			</ion-item>
+		</ion-list>
+		</form>
+		<div class="text-center">
+			<ion-button (click)="addAsset()" color="gold">SUBMIT FORM</ion-button>
+		</div>
+		<!-- <ion-list>
+			<ion-item>
+				<ion-label position="stacked" class="fw600">Product Image</ion-label>
+				<div>
+					<ion-button fill="outline" color="darkblue" class="buttonone" size="small" (click)="openCam()">Camera</ion-button>
+					<ion-button fill="outline" color="darkblue" class="buttontwo" size="small">Gallery</ion-button>
+					<ion-button fill="outline" color="darkblue" class="buttontwo" size="small" (click)="upload()">Upload</ion-button>
+					<img src="{{image}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="asset-image">  
+				</div>
+			</ion-item>
+			<ion-item>
+				<ion-label position="stacked" class="fw600">Invoice Image</ion-label>
+				<div>
+					<ion-button fill="outline" color="darkblue" class="buttonone" size="small" (click)="openCam()">Camera</ion-button>
+					<ion-button fill="outline" color="darkblue" class="buttontwo" size="small">Gallery</ion-button>
+					<ion-button fill="outline" color="darkblue" class="buttontwo" size="small" (click)="upload()">Upload</ion-button>
+					<img src="{{image}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="asset-image">  
+				</div>
+			</ion-item>
+			<ion-item>
+				<ion-label position="stacked" class="fw600">Warranty Image</ion-label>
+				<div>
+					<ion-button fill="outline" color="darkblue" class="buttonone" size="small" (click)="openCam()">Camera</ion-button>
+					<ion-button fill="outline" color="darkblue" class="buttontwo" size="small">Gallery</ion-button>
+					<ion-button fill="outline" color="darkblue" class="buttontwo" size="small" (click)="upload()">Upload</ion-button>
+					<img src="{{image}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="asset-image">  
+				</div>
+			</ion-item>
+		</ion-list> -->
+	</div>
+	<div *ngSwitchCase="'Members'">
+		<form>
+			<h5 class="header-h5">Personal Details</h5>
+			<ion-list lines="none">
+				<ion-item class="ion-item">
+					<ion-radio-group value="adult">
+						<ion-row>
+							<ion-col class="ion-no-padding">
+								<ion-list-header class="ion-no-padding">
+									<ion-label>Category</ion-label>
+								</ion-list-header>
+							</ion-col>
+							<ion-col class="ion-no-padding">
+								<ion-item>
+									<ion-label>Adult</ion-label>
+								   <ion-radio slot="start" color="gold" value="adult"></ion-radio>
+							   </ion-item>
+							</ion-col>
+							<ion-col class="ion-no-padding">
+								<ion-item>
+									<ion-label>Child</ion-label>
+									<ion-radio slot="start" color="gold" value="child"></ion-radio>
+								</ion-item>
+							</ion-col>
+						</ion-row>
+					</ion-radio-group>
+				</ion-item>
+				<ion-item class="ion-item">
+					<ion-label position="fixed">Full Name</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item class="ion-item">
+					<ion-label position="fixed">Nick Name</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item class="ion-item">
+					<ion-label position="fixed">Mobile Number</ion-label>
+					<ion-input type="numeric"></ion-input>
+				</ion-item>
+				<ion-item class="ion-item">
+					<ion-label position="fixed">E Mail</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<ion-item class="ion-item">
+					<ion-label position="fixed">Date Of Birth</ion-label>
+					<ion-datetime></ion-datetime>
+				</ion-item>
+				<ion-item class="ion-item">
+					<ion-label position="fixed">Aadhaar Number</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+				<div class="ion-item">
+					<h5 class="header-h4">Documents</h5>
+					<ion-row>
+						<ion-col class="custom-padding">
+							<ion-label>Aadhaar Card</ion-label>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col class="custom-padding">
+							<ion-label>PAN Card</ion-label>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col class="custom-padding">
+							<ion-label>Driving License</ion-label>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col class="custom-padding">
+							<ion-label>Passport</ion-label>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-list>
+
+			<h5 class="header-h5">Health Details</h5>
+			<ion-list lines="none">
+			<ion-item class="ion-item">
+				<ion-label position="fixed">Blood Group</ion-label>
+				<ion-input type="text"></ion-input>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed">Height</ion-label>
+				<ion-input type="numeric" placeholder="In Feet"></ion-input>
+			</ion-item>
+			<ion-item class="ion-item">
+				<ion-label position="fixed">Weight</ion-label>
+				<ion-input type="numeric" placeholder="In Kg"></ion-input>
+			</ion-item> 
+			<ion-item class="ion-item">
+				<ion-label position="fixed">Heart Rate</ion-label>
+				<ion-input type="numeric" placeholder="In BPM"></ion-input>
+			</ion-item> 
+			<ion-item class="ion-item">
+				<ion-radio-group value="yes">
+					<ion-row>
+						<ion-col class="ion-no-padding">
+							<ion-list-header class="ion-no-padding">
+								<ion-label>Health Insurance</ion-label>
+							</ion-list-header>
+						</ion-col>
+						<ion-col class="ion-no-padding">
+							<ion-item lines="none">
+								<ion-label>Yes</ion-label>
+							   <ion-radio slot="start" color="gold" value="yes"></ion-radio>
+						   </ion-item>
+						</ion-col>
+						<ion-col class="ion-no-padding">
+							<ion-item lines="none">
+								<ion-label>No</ion-label>
+								<ion-radio slot="start" color="gold" value="no"></ion-radio>
+							</ion-item>
+						</ion-col>
+					</ion-row>
+				</ion-radio-group>
+			</ion-item>
+			<div class="ion-item">
+				<h5 class="header-h4">Documents</h5>
+				<ion-row>
+					<ion-col class="custom-padding">
+						<ion-label>Doctor Reports</ion-label>
+					</ion-col>
+					<ion-col>
+						<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+					</ion-col>
+					<ion-col>
+						<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col class="custom-padding">
+						<ion-label>Medical Records</ion-label>
+					</ion-col>
+					<ion-col>
+						<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+					</ion-col>
+					<ion-col>
+						<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+					</ion-col>
+				</ion-row>
+				<ion-row>
+					<ion-col class="custom-padding">
+						<ion-label>Insurance Document</ion-label>
+					</ion-col>
+					<ion-col>
+						<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+					</ion-col>
+					<ion-col>
+						<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+					</ion-col>
+				</ion-row>
+			</div>
+			</ion-list>
+
+			<h5 class="header-h5">Educational Details</h5>
+			<ion-list>
+				<ion-item class="ion-item">
+					<ion-label position="floating">Highest Qualification</ion-label>
+					<ion-input type="text"></ion-input>
+				</ion-item>
+
+				<div class="ion-item">
+					<h5 class="header-h4">Documents</h5>
+					<ion-row>
+						<ion-col class="custom-padding">
+							<ion-label>Marksheets</ion-label>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+						</ion-col>
+					</ion-row>
+					<ion-row>
+						<ion-col class="custom-padding">
+							<ion-label>Certificates</ion-label>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Capture</ion-button>
+						</ion-col>
+						<ion-col>
+							<ion-button size="small" fill="outline" color="gold">Upload</ion-button>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-list>
+		</form>
+	</div>
+	</div>
+
+</ion-content>

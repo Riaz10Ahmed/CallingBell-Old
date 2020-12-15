@@ -1,0 +1,44 @@
+
+<ion-content  class="animated fadeIn login auth-page ion-padding" color="darkblue">
+  <div class="auth-content">
+  <div  class="animated fadeInDown ion-text-center">
+      <!-- <div class="logo"></div> -->
+      <div>
+        <img src="assets/img/newlogov6.png"/>
+      </div>
+      <ion-text color="gold fw500 text08">Powered By</ion-text>
+      <div class="logo-pb"></div>
+    </div>  
+</div>
+  <br><div class="text-center"><ion-text class="fw600">LOGIN AS</ion-text></div>
+ <ion-button class="fw800 ion-margin"  shape="round" color="gold" expand="full" (click)="custLogin()">
+    Home user
+  </ion-button>
+
+   <ion-button class="fw800 ion-margin"  shape="round" expand="full"  color="gold" (click)="corp('Under Development! We are working on it!')">
+    Enterprise
+  </ion-button>
+<div class="text-center">
+  <ion-text  class="fw600 ion-margin" (click)="techLogin()" color="gold">
+    Technician
+  </ion-text>
+  <ion-text  class="fw600" (click)="consLogin()"color="gold">
+    Consultant
+  </ion-text>
+</div>
+ <!--  <div class="text-center">
+    <ion-buttons>
+      <ion-button size="small" shape="round" color="secondary" (click)="career()" class="fw800">
+        JOIN US?
+      </ion-button>
+    </ion-buttons>
+ </div> -->
+<br>
+<!-- <ion-slides [options]="slideOptsOne">
+     <ion-slide *ngFor="let s of sliderOne.slidesItems">
+      <img src="assets/img/{{s.id}}.jpg" class="footer-img">
+      </ion-slide>
+  </ion-slides> -->
+<!-- <h5 class="text-center text08 fw600 tagline">your one stop support & supply app partner</h5> -->
+<!-- <h1 class="text-center fw800">Call us at 1800-258-6099</h1> -->
+</ion-content>

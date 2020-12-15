@@ -1,0 +1,52 @@
+<ion-header>
+<ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+       <div class="logo-in"></div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile" *ngFor="let user of user">
+  <ion-card class="ion-no-margin">
+    <ion-card-content color="dark">
+      <ion-title>PROFILE</ion-title>
+      <img src="http://vaccrm.com/iglobe/{{image}}">
+      <h1 class="fw500">{{user.fullname}}</h1>
+      <h2 color="light" margin-bottom>{{user.phone}}</h2>
+      <h3 color="light">{{user.email}}</h3>
+      <div class="text-center">
+    <ion-button shape="round" color="light" (click)="changePass()" class="ion-margin">Change Password</ion-button>
+    </div>
+    </ion-card-content>
+    <ion-row>
+    	<ion-col><h5 class="fw500">OCCUPATION</h5></ion-col>
+    	<ion-col><h4 class="fw800">{{user.occupation}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col><h5 class="fw500">DATE OF BIRTH</h5></ion-col>
+    	<ion-col><h4 class="fw800">{{user.dob}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col><h5 class="fw500">COMPLETE ADDRESS</h5></ion-col>
+    	<ion-col><h4 class="fw800">{{user.street}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col><h5 class="fw500">CITY</h5></ion-col>
+    	<ion-col><h4 class="fw800">{{user.city}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col><h5 class="fw500">STATE</h5></ion-col>
+    	<ion-col><h4 class="fw800">{{user.state}}</h4></ion-col>
+    </ion-row>
+    <ion-row>
+    	<ion-col><h5 class="fw500">POSTAL CODE</h5></ion-col>
+    	<ion-col><h4 class="fw800">{{user.zip}}</h4></ion-col>
+    </ion-row>
+    
+      
+    <div class="text-center">
+    <ion-button shape="round" color="dark" (click)="editProfile()" class="ion-margin">Edit Profile</ion-button>
+    </div>
+  </ion-card>
+</ion-content>

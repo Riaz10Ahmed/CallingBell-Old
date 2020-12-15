@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+      <ion-buttons slot="start">
+         <ion-menu-button color="light"></ion-menu-button>
+      </ion-buttons>
+  
+      <div>
+          <img src="assets/img/newlogov7.png" class="header-logo"/>
+        </div>
+     
+      <ion-buttons slot="end">
+        <ion-button shape="round" (click)="back()">
+          <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="darkblue">
+  <h5 class="header-text">Adding grocery form</h5>
+  <form>
+      <ion-list lines="none" color="darkblue" class="ion-no-padding">
+          <ion-item color="darkblue" class="item-style">
+            <ion-label position="floating" color="gold">Product Category</ion-label>
+              <ion-select interface="popover" lines="none">
+                      <ion-select-option >Entertainment</ion-select-option>
+              </ion-select>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">Product Sub Category</ion-label>
+                <ion-select interface="popover" lines="none">
+                        <ion-select-option >Entertainment</ion-select-option>
+                </ion-select>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">Product Name</ion-label>
+              <ion-input type="text" color="light"></ion-input>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">Product Image</ion-label>
+              <ion-input type="text" color="light"></ion-input>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">Brand</ion-label>
+              <ion-input type="text" color="light"></ion-input>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">MRP</ion-label>
+              <ion-input type="numeric" color="light"></ion-input>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">Description</ion-label>
+              <ion-input type="text" color="light"></ion-input>
+          </ion-item>
+          <ion-item color="darkblue" class="item-style">
+              <ion-label position="floating" color="gold">Quantity</ion-label>
+              <ion-input type="text" color="light"></ion-input>
+          </ion-item>
+      </ion-list>
+  </form>
+</ion-content>

@@ -1,0 +1,154 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <div class="header-logo-div">
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+     <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="logout()" class="fw700">
+        <ion-icon name="log-out"></ion-icon>
+   		LOGOUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding" color="darkblue">
+<!--   
+<table border="1" class="data-table">
+  <tr>
+    <td *ngFor="let header of headerRow" text-center><b>{{ header }}</b></td>
+  </tr>
+
+  <tr *ngFor="let row of csvData; let i =index">
+    <td *ngFor="let data of row; let j =index" class="data-col">
+
+    </td>
+  </tr>
+</table> -->
+
+<!-- <ion-grid>
+	<ion-row>
+		<ion-col><div class="fw600 text1">CHOOSE A CATEGORY</div></ion-col>
+		<ion-col><div class="cat fw600 text1 text-center"><ion-select (ionChange)="setProductValues(cCategory)"[(ngModel)]="cCategory">
+		            <ion-select-option [value]="cCategory" *ngFor="let cCategory of category">{{cCategory.name}}</ion-select-option>
+		    	</ion-select></div></ion-col>
+	</ion-row>
+</ion-grid> -->
+
+<ion-grid>
+    <h4>Product Estimate Form</h4>
+    <form [formGroup]="myForm" (ngSubmit)="save(myForm)">
+        <!-- we will place our fields here -->
+
+    <div class="form-group">
+        <ion-row>
+        <ion-col><div class="text08 fw600">CHOOSE A CATEGORY</div></ion-col>
+        <!-- <input type="text" formControlName="category"> -->
+        <!--display error message if name is not valid-->
+        <!-- <small *ngIf="!myForm.controls.category.valid" class="text-danger">
+            Name is required (minimum 5 characters).
+        </small> -->
+        <ion-col><div class="cat fw600 text08">
+                <ion-select (ionChange)="setProductValues(cCategory)" [(ngModel)]="cCategory" formControlName="category" interface="action-sheet">
+                 <ion-select-option [value]="cCategory" *ngFor="let cCategory of category">{{cCategory.name}}</ion-select-option>
+                </ion-select>
+          </div></ion-col>
+        </ion-row>
+    </div>
+
+
+    <!-- Span delete
+    <span *ngIf="myForm.controls.products.controls.length > 1"
+                    (click)="removeProduct(i)"></span> -->
+    <ion-row>
+      <ion-col size="2" class="heading one">Item</ion-col>
+      <ion-col>
+        <ion-row>
+          <ion-col size="4" class="heading">Item Name</ion-col>
+          <ion-col class="heading">Qty</ion-col>
+          <ion-col class="heading">Rate</ion-col>
+          <ion-col class="heading">Total</ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <!-- list of addresses -->
+    <div formArrayName="products">
+        <ion-row *ngFor="let product of myForm.controls.products.controls; let i=index">
+            <!-- address header, show remove button when more than one address available -->
+            <ion-col size="2" class="align-self">
+            <!-- <div> -->
+                <h5>{{i + 1}}<ion-icon (click)="removeProduct(i)" name="trash" color="gold" class="delete"></ion-icon></h5>
+            <!-- </div> -->
+            </ion-col>
+            <!-- Angular assigns array index as group name by default 0, 1, 2, ... -->
+            <ion-col [formGroupName]="i" >
+                <!--street-->
+                <ion-row class="align">
+                  <ion-col size="4">
+                <!-- <div> -->
+                    <!-- <label>Product Name</label> -->
+                    <!-- <input type="text" formControlName="productName"> -->
+                    <div class="cat fw600 text08">
+                       <ion-select *ngIf="selectedProduct" formControlName="productName" interface="popover">
+                              <ion-select-option *ngFor="let pProduct of selectedProduct">{{pProduct.name}}</ion-select-option>
+                      </ion-select>
+                    </div>
+                    <!--display error message if street is not valid-->
+                    <p [hidden]="myForm.controls.products.controls[i].controls.productName.valid">
+                       * Required
+                    </p>
+                <!-- </div> -->
+                  </ion-col>
+                <!--postcode-->
+                  <ion-col >
+                <!-- <div> -->
+                    <!-- <label>quantity</label> -->
+                    <div class="cat fw600 text08">
+                      <ion-input type="number" formControlName="quantity" ></ion-input>
+                    </div>
+                    <p [hidden]="myForm.controls.products.controls[i].controls.quantity.valid">
+                        * Required
+                    </p>
+                <!-- </div> -->
+                  </ion-col>
+                  <ion-col>
+                     <div class="fw600 text08">
+                        <ion-input type="number" formControlName="rate"></ion-input>
+                     </div>
+                  </ion-col>
+                  <ion-col class="margin">
+                     <div class="fw600 text08">
+                      <!-- <ion-label>{{(myForm.controls.products.controls[i].controls.quantity.value * myForm.controls.products.controls[i].controls.rate.value )}}</ion-label> -->
+                      <ion-input type="number"  formControlName="total" readonly>{{(myForm.controls.products.controls[i].controls.quantity.value * myForm.controls.products.controls[i].controls.rate.value )}}</ion-input>
+                     </div>
+                  </ion-col>
+                </ion-row>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div>
+      <ion-label class="add" (click)="addProduct()"><ion-icon name="add-circle" ></ion-icon>ADD</ion-label>
+      <ion-label class="right">GRAND TOTAL : </ion-label>
+    <!-- <ion-button (click)="addProduct()">Add Product</ion-button> -->
+      </div>
+    </form>
+</ion-grid>
+<div class="text-center">
+        <ion-button color="gold" (click) ="save(myForm,'Your form is submitted for approval!')" [disabled]="!myForm.valid">Submit for approval</ion-button>
+      </div>
+
+ <!-- <ion-list lines="none">
+    <form [formGroup]="estimateForm">
+      <ion-item *ngFor="let control of estimateForm.controls | keyvalue">
+        <ion-input required type="text" [formControlName]="{{control.key}} item1" placeHolder="product"></ion-input>
+         <ion-input required type="text" [formControlName]="{{control.key}} qty1" placeHolder="quantity"></ion-input>
+        <ion-icon (click)="removeControl(control)" name="close-circle"></ion-icon>
+      </ion-item>
+    </form>
+  </ion-list> -->
+<!-- 
+        <ion-button expand="full" color="light" (click)="addControl()">Add Player</ion-button>
+        <ion-button expand="full" color="light" (click)="submit()">Submit for approval</ion-button>
+
+ -->
+
+</ion-content>

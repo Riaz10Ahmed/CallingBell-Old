@@ -1,0 +1,85 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+
+.item-style{
+    display:flex;
+    width: 100%;
+}
+
+.item-content-style{
+    margin-left:10px;
+    width: 100%;
+}
+
+.item-img-style{
+    width: 80px;
+    height: 80px;
+}
+
+
+.cat-main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.cat-header{
+    margin:2% 5%;
+    font-size:15px;
+    text-transform: capitalize;
+}
+
+.cat-img{
+    width:auto;
+    height:auto;
+    max-width: 70px;
+    max-height: 70px;
+}
+
+.cat-divsize{
+    display: inline-block;
+    width:48%;
+    text-align: center;
+    margin:1%;
+    padding-bottom: 4%; 
+}
+
+.cat-name{
+    margin: 0;
+    font-size: 14px;
+    padding:2px;
+    text-transform: capitalize;
+}
+
+.cat-quantity{
+    margin: 0;
+    padding:1px;
+    font-size: 12px;
+}
+
+.cat-brand{
+    margin: 0;
+    font-size: 13px;
+    padding:1px;
+    text-transform: capitalize;
+}
+
+.cat-mrp{
+    margin: 0;
+    font-size:18px;
+    padding:1px;
+    color:#ffad00;
+}
+
+.cat-nf{
+    margin:2% 5%;
+    font-size:15px;
+    color: #0e0e27;
+}
+
+.cat-item-footer{
+    display: flex;
+    align-items: center;
+}
+

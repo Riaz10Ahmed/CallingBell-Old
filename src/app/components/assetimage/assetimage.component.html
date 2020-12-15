@@ -1,0 +1,22 @@
+<div>
+  <h5 class="header">IMAGE UPLOADING !</h5>
+  <p *ngIf="this.msg" class="msg">{{this.msg.name}}</p>
+  <div class="img-div">
+    <img src="{{image}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="image"/>
+  </div>
+  <div class="ion-text-center">
+    <ion-row>
+      <ion-col>
+        <ion-button color="darkblue" size="small" fill="outline" (click)="openCam()">CAPTURE</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="darkblue" size="small" fill="outline" (click)="upload()">UPLOAD</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+  
+  <!-- <div class="flex">
+    <h5 class="content1">SKIP</h5>
+    <h5 class="content1">NEXT</h5>
+  </div> -->
+</div>

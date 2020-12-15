@@ -1,0 +1,167 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+
+.card-style{
+    width: 50%;
+    display: inline-block;
+    // max-height: ;
+}
+
+.content-style{
+    display: flex;
+    flex-direction:column;
+}
+
+.content-desc{
+    overflow-y: scroll;
+    height: 70px;
+    font-size: 12px;
+    padding: 5px;
+    font-style: italic;
+}
+
+.content-header{
+   font-size: 14px;
+   padding: 5px;
+   text-transform: uppercase;
+}
+
+.content-title{
+    font-size: 14px;
+ }
+
+ .content-price{
+     font-size: 16px;
+     color: #0e0e27;
+     font-weight: 600;
+ }
+
+ .card-img{
+     max-height:200px;
+     max-width: 100%;
+ }
+
+ .card-content{
+    display: flex;
+    align-items: center;
+ }
+
+ .card-icon{
+     font-size: 30px;
+ }
+
+ .gift-header{
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 10px;
+    text-align: center;
+ }
+
+ .gift-name{
+     font-size: 14px;
+     color: black;
+     text-transform: uppercase;
+     margin: 5px;
+     font-weight: 700;
+ }
+
+ .gift-desc-title{
+    font-size: 12px;
+    color: black;
+    text-transform: capitalize;
+    margin: 5px;
+ }
+
+ .gift-ul{
+     margin: 5px 0px 0px 0px;
+     font-size: 10px;
+     color:#0e0e27;
+     text-transform: capitalize;
+ }
+
+ .gift-price{
+     font-size: 14px;
+     color: #0e0e27;
+     margin: 0;
+     font-weight: 700;
+     margin-top: 10px;
+ }
+
+ .card-title{
+    font-size: 14px;
+    text-align: center;
+ }
+
+ .rGift-header{
+    padding: 5px 10px 10px 10px;
+ }
+
+ .rGift-title{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+ }
+
+ .rGift-desc{
+    text-transform: capitalize;
+    font-style: italic;
+ }
+
+ .rGift-price{
+    font-size: 20px;
+    font-weight: 600;
+    color: black;
+ }
+
+ .rGift-qty{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #0e0e27;
+    font-weight: 600;
+ }
+
+ .rGift-card{
+     width: 80%;
+ }
+//  .gift-li{
+//      text-transform: capitalize;
+//  }
+
+.swipe-right{
+    text-align: center;
+    font-weight: 600;
+    margin: 15px 0px 0px 0px;
+    font-size: 25px;
+    color: lightgray;
+    text-transform: uppercase;
+}
+
+.for-more{
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+    font-weight: 600;
+    color: lightgray;
+}
+
+.cGift-title{
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+ }
+
+ .cGift-price{
+    text-align: center;
+    font-size: 18px;
+    color:#0e0e27;
+    margin: 5px;
+    font-weight: 600;
+ }
+
+ .cGift-img{
+     width: 130px;
+ }

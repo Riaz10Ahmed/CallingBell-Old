@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5 class="content-header">Your Service Bookings and Order Status</h5>
+  <div *ngIf="servStatus">
+    <div class="content-div" *ngFor="let status of servStatus">
+      <ion-row>
+        <ion-col size="8">
+          <p class="content-one">Created On : {{status.create_on}}</p>
+        </ion-col>
+        <ion-col>
+          <p class="content-one ion-text-end">Status : {{status.status}}</p>
+        </ion-col>
+      </ion-row>
+      <h5 class="content-two">{{status.head}}</h5>
+      <p class="content-three">Description : {{status.detail}}</p>
+    </div>
+  </div>
+
+  <div *ngIf="!servStatus">
+    <h5 class="content-noservice">Oops! You don't have any pending status</h5>
+  </div>
+</ion-content>

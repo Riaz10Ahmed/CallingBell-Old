@@ -1,0 +1,7 @@
+{
+  "name": "callingbell",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

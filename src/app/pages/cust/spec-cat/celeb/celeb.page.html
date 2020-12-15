@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+     <ion-buttons slot="end">
+        <ion-button shape="round" (click)="back()">
+          <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content> 
+    <div>
+        <img src="assets/img/corporatewish1.jpg">
+    </div>
+    <!-- <div>
+      <img src="assets/img/celeb/bgceleb.jpg"/>
+    </div> -->
+    <!-- <div class="bg">
+        <h4>“The more you praise and celebrate your life,<br>the more there is in life to celebrate.”</h4>
+        </div> -->
+      <h5 class="content-wishes">WISHES</h5>
+      <div *ngFor="let service of celebrations"(click)="celeblevel2()" class="size">
+        <div class="flex">
+          <img src="{{service.image_url}}" class="img-size"/>
+          <h5>{{service.name}}</h5>
+        </div>
+      </div>
+      <h5 class="content-wishes">EVENTS MANAGEMENT</h5>
+      <div *ngFor="let service of events"  class="size">
+        <div class="flex">
+          <img src="{{service.image_url}}" class="img-size"/>
+          <h5>{{service.name}}</h5>
+        </div>
+      </div>
+    
+</ion-content>
+
+

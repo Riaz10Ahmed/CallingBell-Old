@@ -1,0 +1,56 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+
+
+.size{
+	display: inline-block;
+	width:44%;  //default - 46%
+	// background-color: #f1f1f1;
+	text-align: center;
+    margin: 3%;
+	height:140px;
+	border-radius:5px;
+	border:2px solid #f1f1f1;
+}
+
+ .service-img{
+    width:80px;
+    // height:150px;
+    height:80px;
+    border-radius: 5px;
+    // margin-left: auto;
+    // margin-right: auto;
+    margin: 10px auto;
+    }
+
+	.flex{
+		display: flex;
+		flex-direction:column;
+	}
+   
+	.service-name{
+		text-transform: uppercase;
+		margin:10px;
+		font-size: 12px;
+	}
+
+.title{
+	font-size: 16px;
+	margin:10px;
+	font-weight:600;
+	color:#0e0e27;
+}
+
+.support{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+}
+
+.support-btn{
+	background-color: #ffad00;
+	padding: 6px;
+	border-radius: 50%;
+}

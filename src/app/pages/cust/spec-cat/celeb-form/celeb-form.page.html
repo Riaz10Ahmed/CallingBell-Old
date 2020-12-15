@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+       <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="card">
+    <img src="{{card.image_url}}" class="header-img"/>
+  </div>
+  <form [formGroup]="onCelebForm">
+      Date of Birth
+      <ion-item class="ion-no-padding">
+        <ion-datetime placeholder="Select Date" color="darkblue"></ion-datetime>
+      </ion-item>
+      From
+      <ion-item class="ion-no-padding">
+        <ion-input color="darkblue" placeholder="Sender Name" formControlName="senderName" color="darkblue"></ion-input>
+      </ion-item>
+      <br>
+      To
+      <ion-item class="ion-no-padding">
+        <ion-input color="darkblue" type="number" formControlName="recipientNumber" placeholder="Enter recipient Whatsapp Number"></ion-input>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-input color="darkblue" formControlName="recipientEmail" placeholder="Enter recipient Email Address"></ion-input>
+      </ion-item>
+      <br>
+      Your Message
+      <ion-item class="ion-no-padding">
+        <ion-textarea formControlName="message" placeholder="Happy Birthday!"></ion-textarea>
+      </ion-item>
+  </form>
+  <ion-button (click)="celebForm()" color="gold" fill="outline">ADD TO CART</ion-button>
+</ion-content>
+
+
+
+

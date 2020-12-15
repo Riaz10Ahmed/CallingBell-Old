@@ -1,0 +1,53 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+
+.brand-main{
+    margin: 3%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 2%;
+}
+
+.brand-header{
+    margin: 2% 5%;
+    text-transform: capitalize;
+}
+.qty-header{
+    margin: 3% 5% 0 5%;
+    font-size: 16px;
+}
+
+.brand-size{
+    display: inline-block;
+    width:29%;
+    margin:2%;
+    text-align: center;
+}
+
+.brand-img{
+    max-width:70px;
+    max-height:40px;
+}
+
+.filter-button{
+    text-align: right;
+    margin-right:5%;
+}
+
+.cap{
+    text-transform: capitalize;
+    font-size: 13px;
+    padding: 0;
+    margin: 0;
+}
+
+.nopadding{
+    padding: 0;
+    margin: 0;
+}
+
+.filter-brand{
+    font-size: 12px;
+}

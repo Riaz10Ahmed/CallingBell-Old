@@ -1,0 +1,53 @@
+:host{
+    h3{
+	    font-family: 'Montserrat',arial;
+	    text-align: center;
+	    color:#2193b0;
+	    // font-size: 0.5rem;
+	    margin:10px 0px;
+	    padding:10px 0px;
+        background-color: #d3d3d3;
+        border-radius:0;
+        font-size: 1.0rem;
+	}
+    ion-slide{
+        display: flex;
+        flex-direction:column;
+    }
+    .div{
+        margin-top:3%;
+        margin-bottom: 3%;
+    }
+    img{
+        width:400px;
+        height:190px;
+    }
+
+    .img-size{
+        width:100px;
+        height:80px;
+    }
+    p{
+        margin-top:5px;
+    }
+	.btn-padding{
+		margin-left:20%;
+	}
+    .prod-title{
+        font-size:15px;
+        // margin:10px 10px;
+    }
+
+    ion-icon{
+        // width:50px;
+        // height:50px;
+        margin-top:10px;
+    }
+    h5{
+        background-color: red;
+        margin-top:5px;
+        color:ivory;
+        padding:5px;
+        text-transform: uppercase;
+    }
+}

@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+        <img src="assets/img/newlogov7.png" class="header-logo"/>
+      </div>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<!-- image -->
+
+<h4 class="fw600">What do you want help with?</h4>
+<div class="size">
+  <div class="flex" (click)="allService()">
+    <img src="assets/img/QB.jpg" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="service-img"/>
+    <h5>All services</h5>
+  </div>
+</div>
+  <div *ngFor="let service of serviceSC"  class="size">
+    <div class="flex" (click)="goToIssueList(service)">
+      <img src="{{service.icon}}" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="service-img"/>
+      <h5>{{service.name}}</h5>
+    </div>
+  </div>
+  <br>
+  <br>
+  <img src= "http://apiv1.iglobesystems.com:8000/assets/img/services_cat/banner/{{service.id}}.jpg" (click)="goToProducts()"/>
+<div class="CB">
+  <h2 class="fw600">CB verified</h2>
+  <div class="CB-verify">
+    <ion-icon name="contact" color="gold"></ion-icon><ion-label class="fs14">Skilled & verified technicians</ion-label>
+  </div>
+  <div class="CB-verify">
+      <ion-icon name="calendar" color="gold"></ion-icon><ion-label class="fs14">30-Day service guarantee</ion-label>
+  </div>
+  <div class="CB-verify">
+      <ion-icon name="wallet" color="gold"></ion-icon><ion-label class="fs14">Rs.10,000 damage cover on every booking</ion-label>
+  </div>
+</div>
+
+<div>
+  <h3 class="fw600">Note</h3>
+  <ul>
+    <li class="fs14">Spare parts are charged as per market price</li>
+    <li class="fs14">A Rs.100 procurement fee is charged on all order where partner fetches material as part of the service</li>
+    <li class="fs14">Service charge excludes material costs and masonry charges</li>
+  </ul>
+</div>
+<ion-fab horizontal="end" vertical="bottom" slot="fixed">
+  <ion-fab-button color="darkblue" size="small" (click)="opencart()" #cart>
+    <!-- <div class="cart-length">{{ cardItemCount | async }}</div> -->
+    <ion-icon name="cart"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+</ion-content>

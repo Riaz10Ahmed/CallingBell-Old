@@ -1,0 +1,87 @@
+.prod-name{
+    font-size: 14px;
+    margin: 0;
+    // padding: 0;
+}
+
+.prod-qty{
+    font-size: 10px;
+    margin: 0;
+    padding:0px 5px;
+}
+
+.list-style{
+    padding: 0;
+}
+
+.btn-style{
+    padding: 0;
+    text-align: center; 
+}
+
+.count-style{
+    text-align: center;
+    font-size: 14px;
+}
+
+.margin-style{
+    margin: 0;
+    font-size: 12px;
+}
+
+.icon-size{
+    font-size: 18px;
+}
+
+ion-row.md.hydrated{
+    width: 100%;
+}
+
+.prod-mrp{
+    font-size: 14px;
+    margin: 0;
+    text-align: end;
+    padding: 0px 5px;
+}
+
+.total-style{
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.cart-header{
+    margin: 0;
+    font-size: 16px;
+    padding-left: 5px;
+    text-transform: uppercase;
+    color:#ffad00;
+    font-weight: 600;
+    text-align: center;
+}
+
+.nocart-header{
+    font-size: 16px;
+    text-align: center;
+}
+
+.nocart-img{
+    width: 50%;
+}
+
+.cart-topheader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-title{
+    padding-left: 20px;
+    color: #0e0e27;
+}
+
+.row-flex{
+    display: flex;
+    align-items: center;
+}

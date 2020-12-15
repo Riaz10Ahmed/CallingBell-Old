@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar color="danger">
+     <div class="logo-in"></div>
+    <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="logout()" class="fw700">
+        <ion-icon name="log-out"></ion-icon>
+   		LOGOUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+
+	<h1 class="text-center fw800" style="color:red">PROFILE</h1>
+	<div class="text-center">
+		<img src="assets/img/avatar.png">
+	</div>
+	<div *ngFor="let u of user">
+	<ion-row>
+		<ion-col><h5 class="fw800">NAME</h5></ion-col>
+		<ion-col><h4 class="fw800 text12">{{u.name}}</h4></ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col><h5 class="fw800">CONSULTANT CODE</h5></ion-col>
+		<ion-col><h4 class="fw800 text12">{{u.code}}</h4></ion-col>
+	</ion-row>
+	<ion-row>
+		<ion-col><h5 class="fw800">MOBILE NUMBER</h5></ion-col>
+		<ion-col><h4 class="fw800 text12">{{u.phone}}</h4></ion-col>
+	</ion-row>
+	<br>
+	<div class="text-center">
+		<ion-button shape="round" color="light" (click)="changePass()" class="ion-margin">Change Password</ion-button>
+	</div>
+	</div>
+</ion-content>

@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="danger">
+        <div class="logo-in"></div>
+     <ion-buttons slot="end">
+      <ion-button size="small" shape="round" color="light" (click)="logout()" class="fw700">
+        <ion-icon name="log-out"></ion-icon>
+   		LOGOUT
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" color="light">
+
+	<h1 class="fw800 text-center text15">CALL DETAILS</h1>
+	<div *ngIf="ticket">
+		<ion-row>
+			<ion-col><h5 class="fw800">ticket no</h5></ion-col>
+			<ion-col><h4 class="fw800">{{ticket.number}}</h4></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><h5 class="fw800">service issue</h5></ion-col>
+			<ion-col><h4 class="fw800">{{ticket.issue}}</h4></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><h5 class="fw800">customer name</h5></ion-col>
+			<ion-col><h4 class="fw800">{{ticket.customer}}</h4></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><h5 class="fw800">customer contact</h5></ion-col>
+			<ion-col><h4 class="fw800">{{ticket.contact}}</h4></ion-col>
+		</ion-row>
+		
+		<ion-row>
+			<ion-col><h5 class="fw800">service category</h5></ion-col>
+			<ion-col><h4 class="fw800">{{ticket.category}}</h4></ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col><h5 class="fw800">service description</h5></ion-col>
+			<ion-col><h4 class="fw800">{{ticket.description}}</h4></ion-col>
+		</ion-row>
+
+		<form [formGroup]="onUpdateForm" class="list-form ion-padding" >
+			<ion-row>
+				<ion-col><h5 class="fw800">service status</h5></ion-col>
+				<ion-col><ion-select [(ngModel)]="s" formControlName="status" placeholder="{{ticket.status}}">
+		     			 <ion-select-option color="danger" [value]="s" *ngFor="let s of status">{{s}}</ion-select-option>
+		    			</ion-select>
+		    	</ion-col>
+			</ion-row>
+
+			<ion-row>
+				<ion-col><h5 class="fw800">solution</h5></ion-col>
+				<ion-col><ion-input color="danger" class="fw800" type="text" formControlName="solution"></ion-input>
+		    	</ion-col>
+			</ion-row>
+		</form>
+		<br>
+		<ion-button class="ion-margin" shape="round" expand="full" color="dark" (click)="updateTicket(ticket.id,ticket.number)">UPDATE</ion-button>
+	</div>
+</ion-content>

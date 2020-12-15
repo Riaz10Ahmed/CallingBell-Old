@@ -1,0 +1,62 @@
+.header-logo{
+    width:120px;
+    vertical-align: middle;
+}
+
+h5{
+    padding: 10px;
+    font-size:16px;
+    font-weight:600;
+    margin: 0;
+}
+
+.column1{
+    width: 30%;
+    text-align: center;
+    align-items: center;
+}
+
+.column2{
+    width: 70%;
+}
+
+.column3{
+    width: 50%;
+}
+
+.column4{
+    width: 50%;
+}
+
+.div-flex{
+    display:flex;
+    margin:5px 0px 15px 0px;
+    padding: 5px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.div-flex2{
+    display:flex;
+    align-items: center;
+}
+
+.issue-img{
+    width: 70px;
+    height: 70px;
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.issue-name{
+    margin: 0;
+    font-size: 14px;
+    color:#0e0e27;
+    padding: 2px;
+}
+
+.issue-detail{
+    font-size: 12px;
+    color:gray;
+    margin: 0;
+    padding: 2px;
+}

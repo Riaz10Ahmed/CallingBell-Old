@@ -1,0 +1,140 @@
+<ion-header>
+<ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+	<div>
+		<img src="assets/img/newlogov7.png" class="header-logo"/>
+	  </div>
+	  <ion-buttons slot="end">
+        <ion-button shape="round" (click)="back()">
+          <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+        </ion-button>
+     </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+	<ion-row>
+		<ion-col>
+			<div class="img">
+				<img src="https://images-na.ssl-images-amazon.com/images/I/91Q3a0v8F%2BL._SL1500_.jpg">
+			</div>
+		</ion-col>
+		<ion-col>
+			<div class="flex">
+				<h5>TELEVISION</h5>
+				<h4>SAMSUNG</h4>
+			</div>
+			<h4>4k uhd led smart tv (55 Inches)</h4>
+			<h2 class="darkblue">warranty : 1 year</h2>
+			<h2 class="darkblue">expires on : 09 Nov 2016 </h2>
+		</ion-col>
+	</ion-row>
+	<div class="center">
+		<h5>PRODUCT PRICE : &#8377;52,999</h5>
+		<h1>YOUR WARRANTY HAS EXPIRED!</h1>
+	</div>
+	<div class="center">
+		<ion-button size="small" color="dark">SUPPORT</ion-button>
+		<ion-button size="small" color="gold">BUY</ion-button>
+		<ion-button size="small" color="darkblue">SELL</ion-button>
+	</div>
+	<h5>INSURANCE</h5>
+	<div>
+		<ion-card class="bg-color">
+			<ion-row>
+				<ion-col>
+					<p class="header">COVER TELEVISION FROM A BREAKDOWN WITH <br>CALLING BELL INSURANCE</p>
+					<div class="text-center">
+							<ion-button color="gold" size="small">GET INSURED</ion-button>
+					</div>
+					
+				</ion-col>
+				<ion-col size="4">
+					<img src="assets/img/90.png" onError="this.src='https://samuelkleinberg.com/wp-content/uploads/2017/03/no-image.jpg'" class="img3">
+				</ion-col>
+			</ion-row>
+		</ion-card>
+	</div>
+
+	<h5>Images</h5>
+	<ion-slides [options]="sliderOpts">
+		<ion-slide *ngFor="let img of ['warranty image', 'invoice image', 'product image']">
+			<img src="assets/img/{{ img }}.jpg" tappable (click)="openPreview(img)">
+			<h2 class="darkblue">{{img}}</h2>
+		</ion-slide>
+	</ion-slides>
+	<br>
+	<h5>Service History</h5>
+	<div>
+	<ion-card class="bg-color">
+		<h3>Model : 4k uhd led smart tv (55 Inches)</h3>
+		<ion-row>
+			<ion-col>
+				<h2>Bill No : 12212889999</h2>
+				<h2>Problem : Adapter failure</h2>
+				<h2>Request raised on : 12/10/19</h2>
+				<h2>Completed on : 13/10/19</h2>
+				<h3>----------------------</h3>
+				<h2>Parts replaced : Adapter</h2>
+				<h2>Model : samsung623621</h2>
+				<h2>Brand : Samsung </h2>
+				<h2>Warranty : 1 year</h2>
+				<h2>Price : rs 1000</h2>
+				<hr>
+			</ion-col>
+			<ion-col size="4">
+				<img src="assets/img/invoice image.jpg" tappable (click)="openPreview('invoice image')" class="img2">
+				<h4>Total service cost : Rs 1500</h4>
+			</ion-col>
+		</ion-row>
+	</ion-card>
+
+	<ion-card class="bg-color">
+			<h3>Model : 4k uhd led smart tv (55 Inches)</h3>
+			<ion-row>
+				<ion-col>
+					<h2>Bill No : 32212845666</h2>
+					<h2>Problem : motherboard issue</h2>
+					<h2>Request raised on : 24/10/20</h2>
+					<h2>Completed on : 25/10/20</h2>
+					<h3>----------------------</h3>
+					<h2>Parts replaced : IC</h2>
+					<h2>Model : IC93219473921</h2>
+					<h2>Brand : Samsung </h2>
+					<h2>Warranty : 1 year</h2>
+					<h2>Price : rs 2000</h2>
+					<hr>
+				</ion-col>
+				<ion-col size="4">
+					<img src="https://cdn.arstechnica.net/wp-content/uploads/2012/10/samsungtv.jpg" class="img2">
+					<h4>Total service cost : Rs 2400</h4>
+				</ion-col>
+			</ion-row>
+		</ion-card>
+
+		<ion-card class="bg-color">
+				<h3>Model : 4k uhd led smart tv (55 Inches)</h3>
+				<ion-row>
+					<ion-col>
+						<h2>Bill No : 12212889999</h2>
+						<h2>Problem : Display Problem</h2>
+						<h2>Request raised on : 12/1/21</h2>
+						<h2>Completed on : 13/1/21</h2>
+						<h3>----------------------</h3>
+						<h2>Parts replaced : Display</h2>
+						<h2>Model : samsung623621</h2>
+						<h2>Brand : Samsung </h2>
+						<h2>Warranty : 1 year</h2>
+						<h2>Price : rs 6000</h2>
+						<hr>
+					</ion-col>
+					<ion-col size="4">
+						<img src="https://image3.mouthshut.com/images/ImagesR/2016/11/Samsung-32J5100-LED-925748531-6055364-1.jpg" class="img2">
+						<h4>Total service cost : Rs 7000</h4>
+					</ion-col>
+				</ion-row>
+			</ion-card>
+	</div>
+	
+</ion-content>

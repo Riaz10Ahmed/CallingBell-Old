@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="darkblue">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div>
+      <img src="assets/img/newlogov7.png" class="header-logo"/>
+    </div>
+    <ion-buttons slot="end">
+      <ion-button shape="round" (click)="back()">
+        <ion-icon name="arrow-round-back" class="text15"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let notify of notification" (click)="goTo(notify)">
+      <ion-col size="2">
+        <img src="assets/img/flaticon/notify/{{notify.icon}}" class="notify-icon"/>
+      </ion-col>
+      <ion-col>
+        <h5 class="notify-text">{{notify.name}}</h5>
+        <ion-row>
+          <ion-col><p class="notify-date">{{notify.date}}</p></ion-col>
+          <ion-col><p class="notify-category">{{notify.category}}</p></ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-item>
+  </ion-list>
+</ion-content>

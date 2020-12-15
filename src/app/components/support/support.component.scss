@@ -1,0 +1,36 @@
+.header-msg{
+    font-size: 14px;
+    text-align: center;
+    margin: 10px;
+    color: #9c9c9c;
+    font-weight: 400px;
+}
+
+.header{
+    text-align: center;
+    background-color: #ffad00;
+    margin: 0px;
+    padding: 10px;
+    font-weight: 600;
+}
+
+.content-item{
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.content-name{
+    margin: 8px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.content-icon{
+    text-align: end;
+}
+
+.content-icon1{
+    padding-right: 10px;
+}

@@ -1,0 +1,10 @@
+step: 1 >>>> ionic cordova platform rm android
+step: 2 >>>> ionic cordova platform add android
+step: 3 >>>> ionic cordova build --release android
+step: 4 >>>> zip -d platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk META-INF/\*
+step: 5 >>>> jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore CALLING_BELL-release-key.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk CALLINGBELL
+
+Note:  it will ask for password : ( CALLINGBELL )
+
+
+step: 6 >>>> zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk CallingBell.apk
